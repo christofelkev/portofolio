@@ -1,43 +1,81 @@
 // Dynamic content for portfolio
 const projects = [
   {
-    title: { id: "Aplikasi Chat Lokal dengan Integrasi AI", en: "Local Chat App with AI Integration" },
-    description: {
-      id: "Chat React lokal terintegrasi DeepSeek R1 via Ollama. Percakapan persisten dengan IndexedDB, mendukung thread (rename, delete, multi-session) dan fokus privasi (tanpa server).",
-      en: "Local React chat integrated with DeepSeek R1 via Ollama. Persistent conversations with IndexedDB, thread management (rename, delete, multi-session), privacy-first (no server)."
+    title: {
+      id: 'Aplikasi Chat Lokal dengan Integrasi AI',
+      en: 'Local Chat App with AI Integration',
     },
-    tags: ["React", "IndexedDB", "Ollama", "DeepSeek R1"],
-    repo: "https://github.com/christofelkev/chat-local-ai",
+    description: {
+      id: 'Chat React lokal terintegrasi DeepSeek R1 via Ollama. Percakapan persisten dengan IndexedDB, mendukung thread (rename, delete, multi-session) dan fokus privasi (tanpa server).',
+      en: 'Local React chat integrated with DeepSeek R1 via Ollama. Persistent conversations with IndexedDB, thread management (rename, delete, multi-session), privacy-first (no server).',
+    },
+    tags: ['React', 'IndexedDB', 'Ollama', 'DeepSeek R1'],
+    repo: 'https://github.com/christofelkev/chat-local-ai',
     images: [
-      "./assets/projects/AI1.png",
-      "./assets/projects/AI2.png",
-      "./assets/projects/AI3.png",
-    ]
+      './assets/projects/AI1.png',
+      './assets/projects/AI2.png',
+      './assets/projects/AI3.png',
+    ],
   },
   {
-    title: { id: "RECIDER (Recipe Indonesia Finder)", en: "RECIDER (Recipe Indonesia Finder)" },
-    description: {
-      id: "Aplikasi Android (Kotlin) untuk mencari resep masakan Indonesia berdasarkan judul atau bahan. Menggunakan Retrofit, arsitektur MVVM, LiveData & ViewModel untuk UI dinamis dan rekomendasi dari backend.",
-      en: "Android app (Kotlin) to find Indonesian recipes by title or ingredients. Uses Retrofit, MVVM architecture, LiveData & ViewModel for dynamic UI and backend-driven recommendations."
+    title: {
+      id: 'RECIDER (Recipe Indonesia Finder)',
+      en: 'RECIDER (Recipe Indonesia Finder)',
     },
-    tags: ["Android Studio", "Kotlin", "Retrofit", "MVVM", "LiveData", "ViewModel"],
-    repo: "https://github.com/christofelkev/recider",
-    images: [
-      "./assets/projects/recider1.png"
-    ]
+    description: {
+      id: 'Aplikasi Android (Kotlin) untuk mencari resep masakan Indonesia berdasarkan judul atau bahan. Menggunakan Retrofit, arsitektur MVVM, LiveData & ViewModel untuk UI dinamis dan rekomendasi dari backend.',
+      en: 'Android app (Kotlin) to find Indonesian recipes by title or ingredients. Uses Retrofit, MVVM architecture, LiveData & ViewModel for dynamic UI and backend-driven recommendations.',
+    },
+    tags: [
+      'Android Studio',
+      'Kotlin',
+      'Retrofit',
+      'MVVM',
+      'LiveData',
+      'ViewModel',
+    ],
+    repo: 'https://github.com/christofelkev/recider',
+    images: ['./assets/projects/recider1.png'],
   },
   {
-    title: { id: "Video to GIF Converter (FFmpeg)", en: "Video to GIF Converter (FFmpeg)" },
-    description: {
-      id: "Aplikasi web untuk konversi video → GIF. Frontend React, backend Node.js (Express), proses konversi oleh FFmpeg. Upload dari browser, proses server, unduh hasil GIF mudah.",
-      en: "Web app to convert video → GIF. React frontend, Node.js (Express) backend, conversion via FFmpeg. Upload from browser, server-side conversion, easy GIF download."
+    title: {
+      id: 'Video to GIF Converter (FFmpeg)',
+      en: 'Video to GIF Converter (FFmpeg)',
     },
-    tags: ["React", "Node.js", "Express", "FFmpeg"],
-    repo: "https://github.com/christofelkev/video-to-gif",
-    images: [
-      "./assets/projects/gif-1.svg"
-    ]
-  }
+    description: {
+      id: 'Aplikasi web untuk konversi video → GIF. Frontend React, backend Node.js (Express), proses konversi oleh FFmpeg. Upload dari browser, proses server, unduh hasil GIF mudah.',
+      en: 'Web app to convert video → GIF. React frontend, Node.js (Express) backend, conversion via FFmpeg. Upload from browser, server-side conversion, easy GIF download.',
+    },
+    tags: ['React', 'Node.js', 'Express', 'FFmpeg'],
+    repo: 'https://github.com/christofelkev/video-to-gif-ffmpeg',
+    images: ['./assets/projects/video-to-gif1.png'],
+  },
+  {
+    title: {
+      id: 'WhatsApp Bot, Bot WA Toko Servis',
+      en: 'WhatsApp Bot, Service Shop Assistant',
+    },
+    description: {
+      id: 'Bot WhatsApp yang dikembangkan dengan library Pepesan dan Baileys untuk memudahkan interaksi otomatis pada toko atau layanan servis melalui WhatsApp. Dirancang untuk menangani status / percakapan (state) secara efisien agar pengguna mendapatkan respons tepat waktu.',
+      en: 'Web app to convert video → GIF. React frontend, Node.js (Express) backend, conversion via FFmpeg. Upload from browser, server-side conversion, easy GIF download.',
+    },
+    tags: ['JavaScript', 'Node.js', 'Baileys', 'Whatsapp', 'AppScript'],
+    repo: 'https://github.com/christofelkev/bot-wa-toko-servis',
+    images: ['./assets/projects/gif-1.svg'],
+  },
+  {
+    title: {
+      id: 'Podomoro App',
+      en: 'Podomoro App',
+    },
+    description: {
+      id: 'Sebuah Pomodoro timer modern dengan tampilan UI animasi, dukungan keyboard shortcut, efek suara, notifikasi, statistik sesi, serta opsi backend Node.js untuk menyimpan data statistik.',
+      en: 'A sleek Pomodoro timer with animated UI, keyboard shortcuts, sound cues, notification support, session stats, and an optional Node.js backend to persist stats.',
+    },
+    tags: ['JavaScript', 'Node.js', 'React'],
+    repo: 'https://github.com/christofelkev/bot-wa-toko-servis',
+    images: ['./assets/projects/podomoro1.png'],
+  },
 ];
 
 function renderProjects() {

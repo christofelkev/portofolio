@@ -87,9 +87,11 @@ const projects = [
     },
     tags: ['JavaScript', 'PHP', 'Code Igniter 4', 'MySql'],
     repo: 'https://github.com/christofelkev/ujikom_faktur',
-    images: ['./assets/projects/faktur1.png'],
-    images: ['./assets/projects/faktur2.png'],
-    images: ['./assets/projects/faktur3.png'],
+    images: [
+      './assets/projects/faktur1.png',
+      './assets/projects/faktur2.png',
+      './assets/projects/faktur3.png',
+    ],
   },
 ];
 

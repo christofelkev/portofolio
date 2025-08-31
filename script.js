@@ -76,6 +76,21 @@ const projects = [
     repo: 'https://github.com/christofelkev/bot-wa-toko-servis',
     images: ['./assets/projects/podomoro1.png'],
   },
+  {
+    title: {
+      id: 'Sistem Faktur Penjualan',
+      en: 'Sales Invoice System',
+    },
+    description: {
+      id: 'Aplikasi berbasis web untuk mengelola perusahaan, customer, produk, penjualan, dan faktur. Dibangun menggunakan CodeIgniter 4 dengan fitur CRUD dan export PDF.',
+      en: 'A web-based application to manage companies, customers, products, sales, and invoices.Built using CodeIgniter 4 with CRUD features and PDF export.',
+    },
+    tags: ['JavaScript', 'PHP', 'Code Igniter 4', 'MySql'],
+    repo: 'https://github.com/christofelkev/ujikom_faktur',
+    images: ['./assets/projects/faktur1.png'],
+    images: ['./assets/projects/faktur2.png'],
+    images: ['./assets/projects/faktur3.png'],
+  },
 ];
 
 function renderProjects() {

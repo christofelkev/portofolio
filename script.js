@@ -11,11 +11,7 @@ const projects = [
     },
     tags: ['Laravel', 'PHP', 'MySQL', 'Bootstrap', 'Helpdesk'],
     repo: 'https://github.com/christofelkev/helpdesk-app-laravel',
-    images: [
-      './assets/projects/helpdesk1.png',
-      './assets/projects/helpdesk2.png',
-      './assets/projects/helpdesk3.png',
-    ],
+    images: ['./assets/projects/gif-1.svg'],
   },
   {
     title: {
@@ -28,7 +24,11 @@ const projects = [
     },
     tags: ['React', 'IndexedDB', 'Ollama', 'DeepSeek R1'],
     repo: 'https://github.com/christofelkev/webchatai-local',
-    images: ['./assets/projects/gif-1.svg'],
+    images: [
+      './assets/projects/AI1.png',
+      './assets/projects/AI2.png',
+      './assets/projects/AI3.png',
+    ],
   },
   {
     title: {

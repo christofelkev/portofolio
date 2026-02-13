@@ -2,6 +2,23 @@
 const projects = [
   {
     title: {
+      id: 'Aplikasi Helpdesk Berbasis Web',
+      en: 'Web-Based Helpdesk Application',
+    },
+    description: {
+      id: 'Aplikasi helpdesk berbasis Laravel untuk manajemen tiket keluhan pelanggan. Mendukung autentikasi user, pembuatan dan pelacakan tiket, perubahan status tiket, serta dashboard admin untuk monitoring dan penanganan laporan.',
+      en: 'Laravel-based helpdesk application for customer ticket management. Features user authentication, ticket creation and tracking, ticket status updates, and an admin dashboard for monitoring and handling reports.',
+    },
+    tags: ['Laravel', 'PHP', 'MySQL', 'Bootstrap', 'Helpdesk'],
+    repo: 'https://github.com/christofelkev/helpdesk-app-laravel',
+    images: [
+      './assets/projects/helpdesk1.png',
+      './assets/projects/helpdesk2.png',
+      './assets/projects/helpdesk3.png',
+    ],
+  },
+  {
+    title: {
       id: 'Aplikasi Chat Lokal dengan Integrasi AI',
       en: 'Local Chat App with AI Integration',
     },
@@ -10,7 +27,7 @@ const projects = [
       en: 'Local React chat integrated with DeepSeek R1 via Ollama. Persistent conversations with IndexedDB, thread management (rename, delete, multi-session), privacy-first (no server).',
     },
     tags: ['React', 'IndexedDB', 'Ollama', 'DeepSeek R1'],
-    repo: 'https://github.com/christofelkev/chat-local-ai',
+    repo: 'https://github.com/christofelkev/webchatai-local',
     images: [
       './assets/projects/AI1.png',
       './assets/projects/AI2.png',
@@ -250,6 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initRoleRotate();
   initI18n();
   initLightbox();
+  initHamburgerMenu();
 });
 
 // Rotating typing effect for roles
@@ -298,8 +316,50 @@ function initRoleRotate() {
 }
 
 // Simple i18n switch (EN/ID)
+// Mobile hamburger menu functionality
+function initHamburgerMenu() {
+  const hamburgerBtn = document.getElementById('hamburger-menu');
+  const mobileNavMenu = document.getElementById('mobile-nav-menu');
+  
+  if (!hamburgerBtn || !mobileNavMenu) return;
+  
+  hamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileNavMenu.classList.toggle('active');
+    
+    // Update aria-expanded attribute for accessibility
+    const isExpanded = mobileNavMenu.classList.contains('active');
+    hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburgerBtn.contains(e.target) && !mobileNavMenu.contains(e.target)) {
+      mobileNavMenu.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  
+  // Close menu when clicking on a link inside the mobile menu
+  mobileNavMenu.querySelectorAll('a, button').forEach(item => {
+    item.addEventListener('click', () => {
+      mobileNavMenu.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  
+  // Close menu when resizing to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      mobileNavMenu.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 function initI18n() {
   const langToggle = document.getElementById('lang-toggle');
+  const langToggleMobile = document.getElementById('lang-toggle-mobile');
   if (!langToggle) return;
 
   const dict = {
@@ -342,7 +402,9 @@ function initI18n() {
     setText('tech-title', t.tech);
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) themeBtn.title = t.themeTitle;
-    langToggle.textContent = lang === 'id' ? 'EN' : 'ID';
+    if (langToggle) langToggle.textContent = lang === 'id' ? 'EN' : 'ID';
+    if (langToggleMobile)
+      langToggleMobile.textContent = lang === 'id' ? 'EN' : 'ID';
     localStorage.setItem('lang', lang);
     // re-render projects with chosen language
     renderProjects();
@@ -356,11 +418,21 @@ function initI18n() {
   const stored = localStorage.getItem('lang') || 'id';
   applyLang(stored);
 
-  langToggle.addEventListener('click', () => {
-    const current = localStorage.getItem('lang') || 'id';
-    const next = current === 'id' ? 'en' : 'id';
-    applyLang(next);
-  });
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      const current = localStorage.getItem('lang') || 'id';
+      const next = current === 'id' ? 'en' : 'id';
+      applyLang(next);
+    });
+  }
+
+  if (langToggleMobile) {
+    langToggleMobile.addEventListener('click', () => {
+      const current = localStorage.getItem('lang') || 'id';
+      const next = current === 'id' ? 'en' : 'id';
+      applyLang(next);
+    });
+  }
 }
 
 

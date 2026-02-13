@@ -86,6 +86,96 @@ body {
 }
 .nav-actions { display: flex; gap: 10px; }
 
+/* Hamburger menu button styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text);
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Mobile navigation menu */
+.mobile-nav-menu {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  flex-direction: column;
+  min-width: 200px;
+  z-index: 30;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  gap: 8px;
+}
+
+.mobile-nav-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Style mobile nav buttons */
+.mobile-nav-menu .btn {
+  width: 100%;
+  justify-content: flex-start;
+  margin: 2px 0;
+}
+
+.mobile-nav-menu .btn.ghost {
+  background: rgba(255,255,255,.03);
+  border-color: var(--border);
+}
+
+.mobile-nav-menu .btn.ghost:hover {
+  background: rgba(255,255,255,.06);
+}
+
+/* Show hamburger on mobile, hide desktop nav items */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-actions > .btn:not(.hamburger) {
+    display: none;
+  }
+  
+  .nav .brand {
+    position: relative;
+  }
+}
+
+/* Adjust mobile menu positioning */
+@media (max-width: 600px) {
+  .mobile-nav-menu {
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+  }
+}
+
 .btn {
   --btn-bg: var(--brand);
   --btn-fg: #0b0c0e;

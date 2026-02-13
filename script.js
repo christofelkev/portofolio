@@ -28,11 +28,7 @@ const projects = [
     },
     tags: ['React', 'IndexedDB', 'Ollama', 'DeepSeek R1'],
     repo: 'https://github.com/christofelkev/webchatai-local',
-    images: [
-      './assets/projects/AI1.png',
-      './assets/projects/AI2.png',
-      './assets/projects/AI3.png',
-    ],
+    images: ['./assets/projects/gif-1.svg'],
   },
   {
     title: {

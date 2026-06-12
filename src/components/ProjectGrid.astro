@@ -1,0 +1,24 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+const { projects: pt } = t;
+---
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="terminal-prompt">
+      <span class="prompt-sign">$</span>
+      <span class="prompt-path">~/portfolio</span>
+      <span class="prompt-cmd">ls -la projects/</span>
+    </div>
+
+    <p class="muted" style="font-family:var(--font-mono);font-size:12px;margin-top:-12px;margin-bottom:4px;"
+      data-i18n="projects.hint">
+      {pt.hint}
+    </p>
+
+    <div id="project-grid" class="project-grid" aria-live="polite"></div>
+  </div>
+</section>

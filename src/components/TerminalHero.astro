@@ -1,0 +1,36 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+const { hero } = t;
+---
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="terminal-section">
+      <div class="terminal-prompt">
+        <span class="prompt-sign">$</span>
+        <span class="prompt-path">~/portfolio</span>
+        <span class="prompt-cmd">whoami</span>
+      </div>
+      <div class="hero-output">
+        <h1>{hero.name}</h1>
+        <div class="role-line">
+          <span class="cmd">$ cat role.txt</span>
+        </div>
+        <div class="role-line" style="padding-left: 16px;">
+          <span class="typing" id="role-rotate" aria-live="polite">Web Developer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a class="btn" href="#projects" data-i18n="hero.ctaProjects">{hero.ctaProjects}</a>
+      <a class="btn ghost" href="https://mail.google.com/mail/?view=cm&fs=1&to=christofelmanopo3@gmail.com"
+        target="_blank" rel="noreferrer noopener" data-i18n="hero.ctaEmail">{hero.ctaEmail}</a>
+      <a class="btn ghost" href="https://github.com/christofelkev" target="_blank"
+        rel="noreferrer noopener" data-i18n="hero.ctaGithub">{hero.ctaGithub}</a>
+    </div>
+  </div>
+</section>

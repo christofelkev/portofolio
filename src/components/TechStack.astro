@@ -1,0 +1,80 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+const { tech } = t;
+
+const groupLabels: Record<string, string> = tech.groups;
+
+const techGroups = [
+  {
+    key: 'web',
+    items: [
+      { name: 'html5', label: 'HTML5', icon: '/assets/icons/html5.svg' },
+      { name: 'css3', label: 'CSS', icon: '/assets/icons/css3.svg' },
+      { name: 'javascript', label: 'JavaScript', icon: '/assets/icons/javascript.svg' },
+      { name: 'php', label: 'PHP', icon: '/assets/icons/php.svg' },
+      { name: 'react', label: 'React', icon: '/assets/icons/react.svg' },
+    ],
+  },
+  {
+    key: 'mobile',
+    items: [
+      { name: 'androidstudio', label: 'Android Studio', icon: '/assets/icons/androidstudio.svg' },
+      { name: 'kotlin', label: 'Kotlin', icon: '/assets/icons/kotlin.svg' },
+      { name: 'java', label: 'Java', icon: '/assets/icons/java.svg' },
+    ],
+  },
+  {
+    key: 'data',
+    items: [
+      { name: 'python', label: 'Python', icon: '/assets/icons/python.svg' },
+      { name: 'anaconda', label: 'Anaconda', icon: '/assets/icons/anaconda.svg' },
+      { name: 'excel', label: 'Excel', icon: '/assets/icons/excel.svg' },
+      { name: 'googlesheets', label: 'Google Sheets', icon: '/assets/icons/googlesheets.svg' },
+    ],
+  },
+  {
+    key: 'database',
+    items: [
+      { name: 'mysql', label: 'MySQL', icon: '/assets/icons/mysql.svg' },
+      { name: 'mongodb', label: 'MongoDB', icon: '/assets/icons/mongodb.svg' },
+      { name: 'firestore', label: 'Firestore', icon: '/assets/icons/firestore.svg' },
+    ],
+  },
+];
+---
+
+<section class="section" id="tech">
+  <div class="container">
+    <div class="terminal-prompt">
+      <span class="prompt-sign">$</span>
+      <span class="prompt-path">~/portfolio</span>
+      <span class="prompt-cmd">cat skills.json | jq</span>
+    </div>
+
+    <div class="tech-groups">
+      {techGroups.map((group) => (
+        <div class="tech-group">
+          <div class="tech-group-header">
+            <span class="line-num">01</span>
+            <span class="key">&quot;{groupLabels[group.key] || group.key}&quot;</span>
+            <span class="colon">:</span>
+            <span class="brace">[</span>
+          </div>
+          <ul class="tech-list" role="list">
+            {group.items.map((item) => (
+              <li class="tech-item">
+                <img src={item.icon} alt={`${item.label} icon`} />
+                <span class="tech-name">&quot;{item.name}&quot;</span>
+                <span class="tech-sep">→</span>
+                <span class="tech-label">{item.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

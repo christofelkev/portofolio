@@ -1,0 +1,255 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import TabBar from '../components/TabBar.astro';
+import StatusBar from '../components/StatusBar.astro';
+import TerminalHero from '../components/TerminalHero.astro';
+import TechStack from '../components/TechStack.astro';
+import ProjectGrid from '../components/ProjectGrid.astro';
+import TerminalContact from '../components/TerminalContact.astro';
+import Lightbox from '../components/Lightbox.astro';
+import CommandPalette from '../components/CommandPalette.astro';
+import i18nData from '../data/i18n.json';
+import projectsData from '../data/projects.json';
+
+const i18nJson = JSON.stringify(i18nData);
+const projectsJson = JSON.stringify(projectsData);
+---
+
+<MainLayout>
+  <TabBar />
+  <main>
+    <TerminalHero />
+    <TechStack />
+    <ProjectGrid />
+    <TerminalContact />
+  </main>
+  <StatusBar />
+  <Lightbox />
+  <CommandPalette />
+
+  <script is:inline define:vars={{ i18n: i18nJson, projects: projectsJson }}>
+    var __I18N__ = JSON.parse(i18n);
+    var __PROJECTS__ = JSON.parse(projects);
+
+    function initTheme() {
+      var stored = localStorage.getItem('theme');
+      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      var theme = stored || (prefersLight ? 'light' : 'dark');
+      document.documentElement.classList.toggle('light', theme === 'light');
+      updateThemeToggle(theme);
+
+      document.getElementById('theme-toggle')?.addEventListener('click', function() {
+        var current = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+        var next = current === 'light' ? 'dark' : 'light';
+        localStorage.setItem('theme', next);
+        document.documentElement.classList.toggle('light', next === 'light');
+        updateThemeToggle(next);
+      });
+
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.classList.toggle('light', e.matches);
+          updateThemeToggle(e.matches ? 'light' : 'dark');
+        }
+      });
+
+      function updateThemeToggle(t) {
+        var el = document.getElementById('theme-toggle');
+        if (el) el.textContent = t === 'light' ? '\u2600\uFE0F' : '\uD83C\uDF19';
+      }
+    }
+
+    function initI18n() {
+      var stored = localStorage.getItem('lang') || 'id';
+      document.documentElement.lang = stored;
+      applyLang(stored);
+
+      function applyLang(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n');
+          if (key) {
+            try {
+              var parts = key.split('.');
+              var val = __I18N__[lang];
+              for (var i = 0; i < parts.length; i++) {
+                if (val && typeof val === 'object') val = val[parts[i]];
+                else { val = null; break; }
+              }
+              if (val && typeof val === 'string') el.textContent = val;
+            } catch(e) {}
+          }
+        });
+        localStorage.setItem('lang', lang);
+        renderProjects(lang);
+      }
+
+      document.getElementById('lang-toggle')?.addEventListener('click', function() {
+        var current = localStorage.getItem('lang') || 'id';
+        applyLang(current === 'id' ? 'en' : 'id');
+      });
+    }
+
+    function renderProjects(lang) {
+      var grid = document.getElementById('project-grid');
+      if (!grid) return;
+      grid.innerHTML = __PROJECTS__.map(function(p, i) {
+        var title = typeof p.title === 'object' ? (p.title[lang] || p.title.id) : p.title;
+        var desc = typeof p.description === 'object' ? (p.description[lang] || p.description.id) : p.description;
+        var images = p.images && p.images.length ? p.images : ['./assets/projects/placeholder.svg'];
+        var imgsHtml = images.map(function(src, idx) {
+          return '<img src="' + src + '" alt="' + title + ' screenshot ' + (idx+1) + '"' + (idx===0 ? ' class="active"' : '') + '>';
+        }).join('');
+        var rotate = images.length > 1 ? '1' : '0';
+        return '<a class="card" href="' + p.repo + '" target="_blank" rel="noreferrer noopener">' +
+          '<div class="thumb" data-rotate="' + rotate + '">' + imgsHtml + '</div>' +
+          '<div class="card-body">' +
+            '<span class="line-num">' + String(i + 1).padStart(2, '0') + '</span>' +
+            '<span class="file-name">\uD83D\uDCC4 ' + title + '</span>' +
+            '<p class="file-desc">' + desc + '</p>' +
+          '</div>' +
+          '<div class="card-meta">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+        '</a>';
+      }).join('');
+      initCarousels();
+    }
+
+    function initCarousels() {
+      document.querySelectorAll('.thumb[data-rotate="1"]').forEach(function(thumb) {
+        var imgs = thumb.querySelectorAll('img');
+        if (imgs.length <= 1) return;
+        var index = 0;
+        var id = setInterval(function() {
+          imgs[index].classList.remove('active');
+          index = (index + 1) % imgs.length;
+          imgs[index].classList.add('active');
+        }, 2500);
+        thumb.setAttribute('data-interval-id', String(id));
+      });
+    }
+
+    function initLightbox() {
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lb-image');
+      if (!lb || !lbImg) return;
+      var currentImages = [];
+      var currentIndex = 0;
+
+      function open(images, idx) {
+        currentImages = images;
+        currentIndex = idx;
+        lbImg.src = images[idx];
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      function show(d) {
+        if (!currentImages.length) return;
+        currentIndex = (currentIndex + d + currentImages.length) % currentImages.length;
+        lbImg.src = currentImages[currentIndex];
+      }
+
+      document.addEventListener('click', function(e) {
+        var target = e.target;
+        var img = target.closest('.thumb img');
+        if (img) {
+          var thumb = img.closest('.thumb');
+          if (!thumb) return;
+          var imgs = Array.from(thumb.querySelectorAll('img')).map(function(n) { return n.src; });
+          open(imgs, imgs.indexOf(img.src));
+          e.preventDefault();
+        }
+        if (target.hasAttribute && target.hasAttribute('data-close')) close();
+      });
+
+      document.getElementById('lb-close')?.addEventListener('click', close);
+      document.getElementById('lb-prev')?.addEventListener('click', function() { show(-1); });
+      document.getElementById('lb-next')?.addEventListener('click', function() { show(1); });
+      document.addEventListener('keydown', function(e) {
+        if (lb.getAttribute('aria-hidden') === 'true') return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(-1);
+        if (e.key === 'ArrowRight') show(1);
+      });
+    }
+
+    function initRoleRotate() {
+      var el = document.getElementById('role-rotate');
+      if (!el) return;
+      var roles = ['Web Developer', 'Mobile Developer', 'Tech Enthusiast', 'Data Enthusiast'];
+      var typeMs = 70, delMs = 45, stayMs = 1100;
+      var ri = 0, ti = 0, del = false;
+
+      function tick() {
+        var cur = roles[ri];
+        if (!del && ti < cur.length) { ti++; setTimeout(tick, typeMs); }
+        else if (!del && ti === cur.length) { del = true; setTimeout(tick, stayMs); }
+        else if (del && ti > 0) { ti--; setTimeout(tick, delMs); }
+        else { del = false; ri = (ri + 1) % roles.length; setTimeout(tick, 300); }
+        el.textContent = cur.slice(0, ti);
+      }
+      tick();
+    }
+
+    function initPalette() {
+      var overlay = document.getElementById('palette-overlay');
+      var input = document.getElementById('palette-input');
+      var list = document.getElementById('palette-list');
+      if (!overlay || !input || !list) return;
+
+      var commands = [
+        { cmd: 'home', desc: 'Go to top', action: function() { window.scrollTo({top:0,behavior:'smooth'}); close(); } },
+        { cmd: 'projects', desc: 'View projects', action: function() { document.getElementById('projects')?.scrollIntoView({behavior:'smooth'}); close(); } },
+        { cmd: 'skills', desc: 'Tech stack', action: function() { document.getElementById('tech')?.scrollIntoView({behavior:'smooth'}); close(); } },
+        { cmd: 'contact', desc: 'Contact section', action: function() { document.getElementById('contact')?.scrollIntoView({behavior:'smooth'}); close(); } },
+        { cmd: 'dark', desc: 'Dark theme', action: function() { localStorage.setItem('theme','dark'); document.documentElement.classList.remove('light'); close(); } },
+        { cmd: 'light', desc: 'Light theme', action: function() { localStorage.setItem('theme','light'); document.documentElement.classList.add('light'); close(); } },
+        { cmd: 'cv', desc: 'Download CV', action: function() { window.open('/assets/cv/CV.pdf','_blank'); close(); } },
+        { cmd: 'github', desc: 'GitHub profile', action: function() { window.open('https://github.com/christofelkev','_blank'); close(); } }
+      ];
+
+      function openP() { overlay.classList.add('open'); setTimeout(function() { input.focus(); }, 50); }
+      function close() { overlay.classList.remove('open'); input.value = ''; renderList(''); }
+
+      function renderList(q) {
+        var filtered = q ? commands.filter(function(c) { return c.cmd.indexOf(q.toLowerCase()) !== -1; }) : commands;
+        list.innerHTML = filtered.map(function(c, i) {
+          return '<button class="palette-item' + (i===0 ? ' selected' : '') + '" data-idx="' + i + '">' +
+            '<span class="pi-cmd">' + c.cmd + '</span> <span class="pi-desc">' + c.desc + '</span></button>';
+        }).join('');
+        list.querySelectorAll('.palette-item').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var idx = parseInt(btn.getAttribute('data-idx'));
+            if (filtered[idx]) filtered[idx].action();
+          });
+        });
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openP(); }
+        if (e.key === 'Escape' && overlay.classList.contains('open')) { close(); }
+      });
+      input.addEventListener('input', function() { renderList(input.value); });
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
+      renderList('');
+    }
+
+    initTheme();
+    initI18n();
+    initLightbox();
+    initRoleRotate();
+    initPalette();
+
+    var clockEl = document.getElementById('status-clock');
+    if (clockEl) {
+      function updateClock() {
+        var now = new Date();
+        clockEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+      updateClock();
+      setInterval(updateClock, 30000);
+    }
+  </script>
+</MainLayout>

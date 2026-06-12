@@ -1,0 +1,21 @@
+---
+import i18nData from '../data/i18n.json';
+const lang = 'id';
+const t = i18nData[lang];
+---
+
+<footer class="status-bar" aria-label="Status bar">
+  <div class="sb-left">
+    <span class="status-item">
+      <span class="si-icon">⎇</span>
+      <span data-i18n="statusBar.branch">{t.statusBar.branch}</span>
+    </span>
+    <span class="status-item">
+      <span data-i18n="statusBar.langMode">{t.statusBar.langMode}</span>
+    </span>
+  </div>
+  <div class="sb-right">
+    <span class="status-item">Ln 1, Col 1</span>
+    <span class="status-item" id="status-clock">00:00</span>
+  </div>
+</footer>

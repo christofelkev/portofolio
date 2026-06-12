@@ -1,0 +1,29 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+const { contact } = t;
+---
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="terminal-prompt">
+      <span class="prompt-sign">$</span>
+      <span class="prompt-path">~/portfolio</span>
+      <span class="prompt-cmd">cat contact.md</span>
+    </div>
+
+    <div class="contact-actions">
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=christofelmanopo3@gmail.com"
+        target="_blank" rel="noreferrer noopener" data-i18n="contact.email">{contact.email}</a>
+      <a class="btn ghost" href="https://github.com/christofelkev" target="_blank"
+        rel="noreferrer noopener" data-i18n="contact.github">{contact.github}</a>
+      <a class="btn ghost" href="/assets/cv/CV.pdf" download data-i18n="contact.cv">{contact.cv}</a>
+    </div>
+
+    <footer class="site-footer">
+      <span>&copy; {new Date().getFullYear()} Christofel Kevin Manopo</span>
+    </footer>
+  </div>
+</section>

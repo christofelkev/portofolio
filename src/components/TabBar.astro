@@ -1,0 +1,27 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+---
+
+<header class="tab-bar" role="tablist">
+  <a class="tab-item active" href="#home" role="tab" aria-selected="true">
+    <span class="tab-file-icon">📄</span> {t.nav.home}
+  </a>
+  <a class="tab-item" href="#projects" role="tab">
+    <span class="tab-file-icon">📋</span> {t.nav.projects}
+  </a>
+  <a class="tab-item" href="#tech" role="tab">
+    <span class="tab-file-icon">📝</span> {t.nav.tech}
+  </a>
+  <a class="tab-item" href="#contact" role="tab">
+    <span class="tab-file-icon">📧</span> {t.nav.contact}
+  </a>
+
+  <div class="tab-actions">
+    <a class="btn sm" href="/assets/cv/CV.pdf" download data-i18n="nav.cv">{t.nav.cv}</a>
+    <button class="tab-btn" id="lang-toggle" title="Toggle language" data-i18n="nav.langLabel">{t.nav.langLabel}</button>
+    <button class="tab-btn" id="theme-toggle" title="Toggle theme">🌙</button>
+  </div>
+</header>

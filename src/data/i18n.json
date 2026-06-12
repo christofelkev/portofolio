@@ -1,0 +1,98 @@
+{
+  "id": {
+    "siteTitle": "Christofel Kevin Manopo - Developer",
+    "brand": "CKM.",
+    "nav": {
+      "home": "home.tsx",
+      "projects": "projects.json",
+      "tech": "skills.md",
+      "contact": "contact.tsx",
+      "cv": "Download CV",
+      "themeTitle": "Toggle tema",
+      "langLabel": "EN"
+    },
+    "hero": {
+      "prompt": "~/portfolio $ whoami",
+      "name": "Christofel Kevin Manopo",
+      "roleLabel": "$ cat role.txt",
+      "roles": ["Web Developer", "Mobile Developer", "Tech Enthusiast", "Data Enthusiast"],
+      "ctaProjects": "Lihat Proyek →",
+      "ctaEmail": "Email",
+      "ctaGithub": "GitHub"
+    },
+    "tech": {
+      "prompt": "$ cat skills.json | jq",
+      "title": "Tech Stack",
+      "groups": {
+        "web": "Web",
+        "mobile": "Mobile",
+        "data": "Data Analyst",
+        "database": "Database"
+      }
+    },
+    "projects": {
+      "prompt": "$ ls -la projects/",
+      "title": "Proyek",
+      "hint": "Klik kartu untuk menuju repository GitHub."
+    },
+    "contact": {
+      "prompt": "$ cat contact.md",
+      "title": "Kontak",
+      "email": "Kirim Email",
+      "github": "GitHub",
+      "cv": "Download CV"
+    },
+    "statusBar": {
+      "branch": "main",
+      "langMode": "Bahasa Indonesia"
+    }
+  },
+  "en": {
+    "siteTitle": "Christofel Kevin Manopo - Developer",
+    "brand": "CKM.",
+    "nav": {
+      "home": "home.tsx",
+      "projects": "projects.json",
+      "tech": "skills.md",
+      "contact": "contact.tsx",
+      "cv": "Download CV",
+      "themeTitle": "Toggle theme",
+      "langLabel": "ID"
+    },
+    "hero": {
+      "prompt": "~/portfolio $ whoami",
+      "name": "Christofel Kevin Manopo",
+      "roleLabel": "$ cat role.txt",
+      "roles": ["Web Developer", "Mobile Developer", "Tech Enthusiast", "Data Enthusiast"],
+      "ctaProjects": "View Projects →",
+      "ctaEmail": "Email",
+      "ctaGithub": "GitHub"
+    },
+    "tech": {
+      "prompt": "$ cat skills.json | jq",
+      "title": "Tech Stack",
+      "groups": {
+        "web": "Web",
+        "mobile": "Mobile",
+        "data": "Data Analyst",
+        "database": "Database"
+      }
+    },
+    "projects": {
+      "prompt": "$ ls -la projects/",
+      "title": "Projects",
+      "hint": "Click a card to open the GitHub repository."
+    },
+    "contact": {
+      "prompt": "$ cat contact.md",
+      "title": "Contact",
+      "email": "Send Email",
+      "github": "GitHub",
+      "cv": "Download CV"
+    },
+    "statusBar": {
+      "branch": "main",
+      "langMode": "English"
+    }
+  }
+}

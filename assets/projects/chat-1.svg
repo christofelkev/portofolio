@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Chat App preview 1">
+  <rect width="800" height="500" fill="#0f172a"/>
+  <rect x="80" y="60" width="640" height="380" rx="16" fill="#111827" stroke="#1f2937"/>
+  <rect x="110" y="100" width="220" height="24" rx="6" fill="#34d399"/>
+  <rect x="110" y="150" width="360" height="18" rx="6" fill="#6b7280"/>
+  <rect x="110" y="190" width="300" height="18" rx="6" fill="#374151"/>
+  <rect x="110" y="230" width="260" height="18" rx="6" fill="#6b7280"/>
+  <rect x="110" y="320" width="560" height="44" rx="10" fill="#0b0c0e" stroke="#374151"/>
+</svg>
+
+

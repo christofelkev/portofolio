@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="RECIDER preview">
+  <rect width="800" height="500" fill="#0f172a"/>
+  <rect x="240" y="40" width="320" height="420" rx="36" fill="#111827" stroke="#1f2937"/>
+  <rect x="270" y="90" width="260" height="40" rx="12" fill="#34d399"/>
+  <rect x="270" y="160" width="260" height="16" rx="6" fill="#4b5563"/>
+  <rect x="270" y="190" width="260" height="16" rx="6" fill="#374151"/>
+  <rect x="270" y="220" width="260" height="16" rx="6" fill="#4b5563"/>
+  <rect x="270" y="360" width="260" height="40" rx="12" fill="#0b0c0e" stroke="#374151"/>
+</svg>
+
+

@@ -6,13 +6,18 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "deploy": "astro build && npx gh-pages -d dist"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.0",
+    "@astrojs/cloudflare": "12",
     "@fontsource/jetbrains-mono": "^5.1.0",
     "astro": "^5.0.0",
     "typescript": "^5.5.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.100.0"
   }
 }

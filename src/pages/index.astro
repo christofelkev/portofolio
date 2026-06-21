@@ -26,6 +26,7 @@ const projectsJson = JSON.stringify(projectsData);
   <StatusBar />
   <Lightbox />
   <CommandPalette />
+  <button class="palette-trigger" id="palette-trigger" aria-label="Open command palette">⌘</button>
 
   <script is:inline define:vars={{ i18n: i18nJson, projects: projectsJson }}>
     var __I18N__ = JSON.parse(i18n);
@@ -130,9 +131,12 @@ const projectsJson = JSON.stringify(projectsData);
     function initLightbox() {
       var lb = document.getElementById('lightbox');
       var lbImg = document.getElementById('lb-image');
+      var lbContent = document.querySelector('.lightbox-content');
       if (!lb || !lbImg) return;
       var currentImages = [];
       var currentIndex = 0;
+      var touchStartX = 0;
+      var touchStartY = 0;
 
       function open(images, idx) {
         currentImages = images;
@@ -167,6 +171,30 @@ const projectsJson = JSON.stringify(projectsData);
       document.getElementById('lb-close')?.addEventListener('click', close);
       document.getElementById('lb-prev')?.addEventListener('click', function() { show(-1); });
       document.getElementById('lb-next')?.addEventListener('click', function() { show(1); });
+
+      if (lbContent) {
+        lbContent.addEventListener('touchstart', function(e) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        lbContent.addEventListener('touchmove', function(e) {
+          if (Math.abs(e.touches[0].clientX - touchStartX) > 10) {
+            e.preventDefault();
+          }
+        }, { passive: false });
+
+        lbContent.addEventListener('touchend', function(e) {
+          var dx = e.changedTouches[0].clientX - touchStartX;
+          var dy = e.changedTouches[0].clientY - touchStartY;
+          if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
+            show(dx > 0 ? -1 : 1);
+          } else if (Math.abs(dy) > 80 && Math.abs(dy) > Math.abs(dx)) {
+            close();
+          }
+        }, { passive: true });
+      }
+
       document.addEventListener('keydown', function(e) {
         if (lb.getAttribute('aria-hidden') === 'true') return;
         if (e.key === 'Escape') close();
@@ -233,6 +261,12 @@ const projectsJson = JSON.stringify(projectsData);
       });
       input.addEventListener('input', function() { renderList(input.value); });
       overlay.addEventListener('click', function(e) { if (e.target === overlay) close(); });
+
+      document.getElementById('palette-trigger')?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openP();
+      });
+
       renderList('');
     }
 

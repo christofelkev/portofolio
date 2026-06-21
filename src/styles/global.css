@@ -69,6 +69,10 @@ body {
   padding: 0 24px;
 }
 
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+}
+
 /* ── Tab Bar ── */
 .tab-bar {
   position: sticky;
@@ -178,11 +182,12 @@ main {
 
 .hero-output h1 {
   margin: 0 0 6px;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: clamp(24px, 5vw, 42px);
   line-height: 1.2;
   color: var(--text);
   font-weight: 800;
+  word-break: break-word;
 }
 
 .role-line {
@@ -192,6 +197,7 @@ main {
   color: var(--muted);
   font-size: clamp(16px, 2.5vw, 22px);
   margin: 0 0 20px;
+  flex-wrap: wrap;
 }
 
 .role-line .cmd { color: var(--brand); }
@@ -507,6 +513,7 @@ main {
   overflow: hidden;
   display: grid;
   place-items: center;
+  touch-action: none;
 }
 
 .lightbox-content img {
@@ -521,6 +528,8 @@ main {
   top: 10px;
   width: 36px;
   height: 36px;
+  min-width: 44px;
+  min-height: 44px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: rgba(30, 31, 36, .8);
@@ -536,8 +545,8 @@ main {
 
 .lb-btn:hover { background: rgba(60, 60, 70, .8); }
 .lb-close { right: 10px; }
-.lb-prev { left: 10px; top: calc(50% - 18px); }
-.lb-next { right: 10px; top: calc(50% - 18px); }
+.lb-prev { left: 10px; top: calc(50% - 22px); }
+.lb-next { right: 10px; top: calc(50% - 22px); }
 
 /* ── Command Palette ── */
 .palette-overlay {
@@ -601,7 +610,35 @@ main {
 .palette-item .pi-desc { color: var(--muted); margin-left: auto; font-size: 11px; }
 .palette-item:hover .pi-desc, .palette-item.selected .pi-desc { color: rgba(255,255,255,.7); }
 
-/* ── Mobile Tab Bar ── */
+/* ── Palette trigger button (mobile) ── */
+.palette-trigger {
+  display: none;
+  position: fixed;
+  bottom: 36px;
+  right: 16px;
+  z-index: 35;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #0b0c0e;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(78, 201, 176, .3);
+  align-items: center;
+  justify-content: center;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.palette-trigger:active { transform: scale(.9); }
+
+/* ── Tablet & small desktop ── */
+@media (max-width: 900px) {
+  .tab-item .tab-file-icon { display: none; }
+}
+
+/* ── Tablet ── */
 @media (max-width: 768px) {
   .tab-bar { padding: 0 4px; gap: 0; }
   .tab-item { padding: 0 10px; font-size: 11px; }
@@ -612,6 +649,45 @@ main {
   .project-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   .status-bar { font-size: 10px; padding: 0 6px; }
   .status-bar .sb-right .status-item:nth-child(2) { display: none; }
+  .palette-trigger { display: flex; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .tab-item { padding: 0 8px; font-size: 10px; }
+  .terminal-prompt { font-size: 12px; gap: 6px; }
+  .terminal-prompt .prompt-path { display: none; }
+  .hero-output h1 { font-size: clamp(20px, 6vw, 28px); }
+  .role-line { font-size: clamp(14px, 4vw, 18px); }
+  .card { grid-template-rows: 120px auto auto; }
+  .card-body { padding: 12px; }
+  .card-meta { padding: 8px 12px; }
+  .tech-list { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .project-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .contact-actions .btn { flex: 1; min-width: 0; }
+  .status-bar .sb-left .status-item:nth-child(2) { display: none; }
+}
+
+/* ── Small mobile ── */
+@media (max-width: 480px) {
+  .tab-item { padding: 0 6px; font-size: 9px; }
+  .tab-item .tab-file-icon { display: none; }
+  .tab-btn { padding: 4px 6px; font-size: 11px; }
+  .hero { padding: 28px 0 16px; }
+  .section { padding: 24px 0 8px; }
+  .terminal-prompt { font-size: 11px; margin-bottom: 14px; }
+  .hero-output { padding: 0 0 0 12px; }
+  .hero-output h1 { font-size: clamp(18px, 7vw, 24px); }
+  .card { grid-template-rows: 100px auto auto; }
+  .tech-list { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .project-grid { grid-template-columns: 1fr; gap: 10px; }
+  .status-bar { font-size: 9px; padding: 0 4px; }
+  .status-bar .sb-left .status-item:first-child { display: none; }
+  .status-bar .sb-right .status-item { display: none; }
+  .status-bar .sb-right .status-item:last-child { display: flex; }
+  .status-item .si-icon { display: none; }
+  .lb-btn { min-width: 40px; min-height: 40px; font-size: 16px; }
+  .palette-trigger { width: 42px; height: 42px; bottom: 32px; right: 12px; font-size: 18px; }
 }
 
 /* ── Ensure footer has bottom padding for status bar ── */

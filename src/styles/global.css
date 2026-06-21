@@ -645,7 +645,7 @@ main {
   .tab-actions { padding-left: 6px; }
   .hero { padding: 36px 0 20px; }
   .section { padding: 32px 0 12px; }
-  .tech-list { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .tech-list { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
   .project-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   .status-bar { font-size: 10px; padding: 0 6px; }
   .status-bar .sb-right .status-item:nth-child(2) { display: none; }
@@ -662,7 +662,9 @@ main {
   .card { grid-template-rows: 120px auto auto; }
   .card-body { padding: 12px; }
   .card-meta { padding: 8px 12px; }
-  .tech-list { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .tech-list { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+  .tech-item .tech-name,
+  .tech-item .tech-sep { display: none; }
   .project-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
   .contact-actions .btn { flex: 1; min-width: 0; }
   .status-bar .sb-left .status-item:nth-child(2) { display: none; }
@@ -679,7 +681,8 @@ main {
   .hero-output { padding: 0 0 0 12px; }
   .hero-output h1 { font-size: clamp(18px, 7vw, 24px); }
   .card { grid-template-rows: 100px auto auto; }
-  .tech-list { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .tech-list { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); }
+  .tech-item { font-size: 11px; padding: 8px 10px; gap: 6px; }
   .project-grid { grid-template-columns: 1fr; gap: 10px; }
   .status-bar { font-size: 9px; padding: 0 4px; }
   .status-bar .sb-left .status-item:first-child { display: none; }

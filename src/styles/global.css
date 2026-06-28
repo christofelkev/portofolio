@@ -475,6 +475,19 @@ main {
 
 .status-item .si-icon { font-size: 12px; }
 
+.sb-lang {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0 4px;
+  opacity: .9;
+  transition: opacity .15s;
+}
+.sb-lang:hover { opacity: 1; }
+
 /* ── Footer ── */
 .site-footer {
   border-top: 1px solid var(--border);
@@ -667,7 +680,7 @@ main {
   .tech-item .tech-sep { display: none; }
   .project-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
   .contact-actions .btn { flex: 1; min-width: 0; }
-  .status-bar .sb-left .status-item:nth-child(2) { display: none; }
+  .status-bar .sb-left .status-item:first-child { display: none; }
 }
 
 /* ── Small mobile ── */

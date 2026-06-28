@@ -87,6 +87,10 @@ const projectsJson = JSON.stringify(projectsData);
         var current = localStorage.getItem('lang') || 'id';
         applyLang(current === 'id' ? 'en' : 'id');
       });
+      document.getElementById('lang-toggle-status')?.addEventListener('click', function() {
+        var current = localStorage.getItem('lang') || 'id';
+        applyLang(current === 'id' ? 'en' : 'id');
+      });
 
       try { applyLang(stored); } catch(e) {}
     }

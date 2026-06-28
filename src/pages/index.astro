@@ -63,7 +63,6 @@ const projectsJson = JSON.stringify(projectsData);
     function initI18n() {
       var stored = localStorage.getItem('lang') || 'id';
       document.documentElement.lang = stored;
-      applyLang(stored);
 
       function applyLang(lang) {
         document.querySelectorAll('[data-i18n]').forEach(function(el) {
@@ -81,18 +80,21 @@ const projectsJson = JSON.stringify(projectsData);
           }
         });
         localStorage.setItem('lang', lang);
-        renderProjects(lang);
+        try { renderProjects(lang); } catch(e) {}
       }
 
       document.getElementById('lang-toggle')?.addEventListener('click', function() {
         var current = localStorage.getItem('lang') || 'id';
         applyLang(current === 'id' ? 'en' : 'id');
       });
+
+      try { applyLang(stored); } catch(e) {}
     }
 
     function renderProjects(lang) {
       var grid = document.getElementById('project-grid');
       if (!grid) return;
+      if (!__PROJECTS__ || !__PROJECTS__.length) return;
       grid.innerHTML = __PROJECTS__.map(function(p, i) {
         var title = typeof p.title === 'object' ? (p.title[lang] || p.title.id) : p.title;
         var desc = typeof p.description === 'object' ? (p.description[lang] || p.description.id) : p.description;

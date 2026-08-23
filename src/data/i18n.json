@@ -26,7 +26,6 @@
       "groups": {
         "web": "Web",
         "mobile": "Mobile",
-        "data": "Data Analyst",
         "database": "Database"
       }
     },
@@ -74,7 +73,6 @@
       "groups": {
         "web": "Web",
         "mobile": "Mobile",
-        "data": "Data Analyst",
         "database": "Database"
       }
     },

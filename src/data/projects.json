@@ -21,7 +21,7 @@
       "id": "Chat React lokal terintegrasi DeepSeek R1 via Ollama. Percakapan persisten dengan IndexedDB, mendukung thread (rename, delete, multi-session) dan fokus privasi (tanpa server).",
       "en": "Local React chat integrated with DeepSeek R1 via Ollama. Persistent conversations with IndexedDB, thread management (rename, delete, multi-session), privacy-first (no server)."
     },
-    "tags": ["React", "IndexedDB", "Ollama", "DeepSeek R1"],
+    "tags": ["React", "TypeScript", "IndexedDB", "Ollama", "DeepSeek R1"],
     "repo": "https://github.com/christofelkev/webchatai-local",
     "images": [
       "./assets/projects/AI1.png",
@@ -39,8 +39,60 @@
       "en": "Android app (Kotlin) to find Indonesian recipes by title or ingredients. Uses Retrofit, MVVM architecture, LiveData & ViewModel for dynamic UI and backend-driven recommendations."
     },
     "tags": ["Android Studio", "Kotlin", "Retrofit", "MVVM", "LiveData", "ViewModel"],
-    "repo": "https://github.com/christofelkev/recider",
+    "repo": "https://github.com/christofelkev/RECIDER",
     "images": ["./assets/projects/recider1.png"]
+  },
+  {
+    "title": {
+      "id": "SnippetAI",
+      "en": "SnippetAI"
+    },
+    "description": {
+      "id": "Platform manajemen dan pembuatan snippet kode berbasis AI untuk membantu developer mengorganisir dan menghasilkan potongan kode dengan cepat.",
+      "en": "AI-powered code snippet generation and management tool designed to help developers organize and generate code snippets quickly."
+    },
+    "tags": ["TypeScript", "React", "AI", "Developer Tools"],
+    "repo": "https://github.com/christofelkev/SnippetAI",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Bible Point",
+      "en": "Bible Point"
+    },
+    "description": {
+      "id": "Aplikasi web interaktif untuk membaca, mencari ayat, dan mencatat poin-poin renungan Alkitab secara terstruktur.",
+      "en": "Interactive web application for reading, searching verses, and keeping structured devotional Bible study notes."
+    },
+    "tags": ["TypeScript", "React", "Web App"],
+    "repo": "https://github.com/christofelkev/bible-point",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "ZKTeco Fingerprint Visualizer",
+      "en": "ZKTeco Fingerprint Visualizer"
+    },
+    "description": {
+      "id": "Aplikasi untuk memvisualisasikan dan memproses log data kehadiran dari mesin fingerprint ZKTeco ke tampilan antarmuka yang mudah dipahami.",
+      "en": "Application for visualizing and processing attendance log data from ZKTeco fingerprint devices into an intuitive user interface."
+    },
+    "tags": ["JavaScript", "Node.js", "ZKTeco", "Data Visualization"],
+    "repo": "https://github.com/christofelkev/zkteco-fingerprint-visualizer",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Ticketing App Rust",
+      "en": "Ticketing App Rust"
+    },
+    "description": {
+      "id": "Sistem manajemen tiket performa tinggi yang dibangun dengan backend Rust dan frontend TypeScript modern untuk pemrosesan antrean cepat.",
+      "en": "High-performance ticketing management system built with Rust backend and modern TypeScript frontend for fast queue processing."
+    },
+    "tags": ["Rust", "TypeScript", "Backend", "Ticketing"],
+    "repo": "https://github.com/christofelkev/ticketing_app_rust",
+    "images": []
   },
   {
     "title": {
@@ -97,5 +149,252 @@
       "./assets/projects/faktur2.png",
       "./assets/projects/faktur3.png"
     ]
+  },
+  {
+    "title": {
+      "id": "HSR Compose App",
+      "en": "HSR Compose App"
+    },
+    "description": {
+      "id": "Aplikasi Android bertema Honkai: Star Rail yang dibangun menggunakan Jetpack Compose dengan navigasi, animasi halus, dan arsitektur modern.",
+      "en": "Honkai: Star Rail themed Android app built with Jetpack Compose featuring navigation, smooth transitions, and modern Android architecture."
+    },
+    "tags": ["Android", "Kotlin", "Jetpack Compose", "Dicoding"],
+    "repo": "https://github.com/christofelkev/HSRComposeApp",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "P5R Calendar",
+      "en": "P5R Calendar"
+    },
+    "description": {
+      "id": "Kalender interaktif web yang terinspirasi oleh antarmuka dan gaya visual Persona 5 Royal.",
+      "en": "Interactive web calendar styled and animated after the UI aesthetics of Persona 5 Royal."
+    },
+    "tags": ["HTML", "CSS", "JavaScript", "UI/UX"],
+    "repo": "https://github.com/christofelkev/calendar_p5r",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "P5R Tetris",
+      "en": "P5R Tetris"
+    },
+    "description": {
+      "id": "Game Tetris klasik yang dibuat dengan HTML5 Canvas dan JavaScript, dibalut tema visual dan audio Persona 5 Royal.",
+      "en": "Classic Tetris web game implemented with HTML5 Canvas and JavaScript with Persona 5 Royal styling and sound design."
+    },
+    "tags": ["JavaScript", "HTML5 Canvas", "Game", "UI Design"],
+    "repo": "https://github.com/christofelkev/tetris",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Firebase Database Android",
+      "en": "Firebase Database Android"
+    },
+    "description": {
+      "id": "Aplikasi Android untuk demonstrasi sinkronisasi data real-time menggunakan Firebase Realtime Database.",
+      "en": "Android application demonstrating real-time cloud data synchronization using Firebase Realtime Database."
+    },
+    "tags": ["Android", "Kotlin", "Firebase", "Realtime DB"],
+    "repo": "https://github.com/christofelkev/Firebase_Database",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Simple Note App (SQLite)",
+      "en": "Simple Note App (SQLite)"
+    },
+    "description": {
+      "id": "Aplikasi catatan Android berbasis SQLite untuk manajemen catatan lokal dengan operasi CRUD lengkap.",
+      "en": "Android note-taking application using SQLite for complete local CRUD note management."
+    },
+    "tags": ["Android", "Kotlin", "SQLite", "CRUD"],
+    "repo": "https://github.com/christofelkev/Simple_Note_App",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Speech to Text Android",
+      "en": "Speech to Text Android"
+    },
+    "description": {
+      "id": "Aplikasi Android untuk mengonversi suara / percakapan pengguna menjadi teks secara langsung menggunakan SpeechRecognizer API.",
+      "en": "Android app converting user voice input directly into text using Android SpeechRecognizer API."
+    },
+    "tags": ["Android", "Kotlin", "SpeechRecognizer", "Voice"],
+    "repo": "https://github.com/christofelkev/Speech_to_Text",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Bookshelf API",
+      "en": "Bookshelf API"
+    },
+    "description": {
+      "id": "RESTful API untuk pengelolaan katalog buku, mendukung operasi CRUD, validasi payload, dan pencarian/filter query.",
+      "en": "RESTful API for bookshelf catalog management supporting CRUD operations, payload validation, and search/filter queries."
+    },
+    "tags": ["Node.js", "JavaScript", "Hapi", "RESTful API"],
+    "repo": "https://github.com/christofelkev/bookshelf-api",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Notes API Backend",
+      "en": "Notes API Backend"
+    },
+    "description": {
+      "id": "Layanan backend REST API untuk pencatatan dan pengelolaan catatan dengan arsitektur modular di Node.js.",
+      "en": "REST API backend service for creating and managing notes with modular Node.js architecture."
+    },
+    "tags": ["Node.js", "JavaScript", "Backend", "REST API"],
+    "repo": "https://github.com/christofelkev/notes-app-back-end",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Belajar JWT Authentication",
+      "en": "JWT Authentication Practice"
+    },
+    "description": {
+      "id": "Implementasi autentikasi token berbasis JSON Web Token (JWT) di PHP murni untuk mengamankan endpoint API.",
+      "en": "Implementation of token-based authentication with JSON Web Token (JWT) in PHP for secure API endpoints."
+    },
+    "tags": ["PHP", "JWT", "Security", "Auth"],
+    "repo": "https://github.com/christofelkev/belajar_jwt",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Belajar WebSocket",
+      "en": "WebSocket Learning Project"
+    },
+    "description": {
+      "id": "Implementasi komunikasi dua arah real-time antara client dan server menggunakan protokol WebSocket.",
+      "en": "Real-time bidirectional communication implementation between client and server using WebSocket protocol."
+    },
+    "tags": ["HTML", "JavaScript", "WebSocket", "Realtime"],
+    "repo": "https://github.com/christofelkev/belajar-websocket",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "QR Code Generator",
+      "en": "QR Code Generator"
+    },
+    "description": {
+      "id": "Aplikasi web ringan untuk membuat dan mengunduh kode QR secara instan dari input teks atau tautan URL.",
+      "en": "Lightweight web tool to generate and instantly download QR codes from text inputs or URL links."
+    },
+    "tags": ["HTML", "JavaScript", "CSS", "Utility"],
+    "repo": "https://github.com/christofelkev/qr-code-gen",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Web Playground",
+      "en": "Web Playground"
+    },
+    "description": {
+      "id": "Sandbox interaktif untuk eksperimen kode HTML, CSS, dan JavaScript secara langsung di browser.",
+      "en": "Interactive sandbox for live testing and experimenting with HTML, CSS, and JavaScript in the browser."
+    },
+    "tags": ["HTML", "CSS", "JavaScript", "Playground"],
+    "repo": "https://github.com/christofelkev/Web-Playground",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Ichiraku Ramen App",
+      "en": "Ichiraku Ramen App"
+    },
+    "description": {
+      "id": "Aplikasi pemesanan menu ramen berbasis Android yang mengimplementasikan CardView, ListView, dan navigasi Intent.",
+      "en": "Android ramen ordering application implementing CardView, ListView, and Intent navigation."
+    },
+    "tags": ["Android", "Java", "CardView", "ListView"],
+    "repo": "https://github.com/christofelkev/Ichiraku-Ramen",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "BMI Calculator Android",
+      "en": "BMI Calculator Android"
+    },
+    "description": {
+      "id": "Kalkulator Body Mass Index (BMI) Android untuk menghitung dan mengkategorikan indeks massa tubuh pengguna.",
+      "en": "Body Mass Index (BMI) calculator Android app to compute and classify body weight categories."
+    },
+    "tags": ["Android", "Java", "Calculator", "Health"],
+    "repo": "https://github.com/christofelkev/BMI-Calculator",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Bucket List App 2023",
+      "en": "Bucket List App 2023"
+    },
+    "description": {
+      "id": "Aplikasi Android untuk mencatat, melacak, dan menandai target atau impian yang ingin dicapai.",
+      "en": "Android application to track, organize, and check off personal goals and bucket list items."
+    },
+    "tags": ["Android", "Java", "Productivity"],
+    "repo": "https://github.com/christofelkev/Bucket-List-App-2023",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Self Promo App",
+      "en": "Self Promo App"
+    },
+    "description": {
+      "id": "Eksplorasi pembuatan aplikasi Android dengan Kotlin meliputi null safety, data class, dan transfer data antar-Activity via Intent.",
+      "en": "Android app exploring Kotlin fundamentals including null safety, data classes, and Activity data transfer with Intents."
+    },
+    "tags": ["Android", "Kotlin", "Intent", "Data Passing"],
+    "repo": "https://github.com/christofelkev/My-Self-Promo-App",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "RecyclerView Example",
+      "en": "RecyclerView Example"
+    },
+    "description": {
+      "id": "Contoh implementasi Android RecyclerView dengan custom adapter, view holder, dan layout manager.",
+      "en": "Android RecyclerView implementation demo with custom adapter, view holder, and layout managers."
+    },
+    "tags": ["Android", "Java", "RecyclerView", "UI"],
+    "repo": "https://github.com/christofelkev/RecyclerView_Example",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Android UI Showcase",
+      "en": "Android UI Showcase"
+    },
+    "description": {
+      "id": "Eksplorasi berbagai komponen antarmuka dasar dan layouting XML pada aplikasi Android native.",
+      "en": "Exploration of fundamental UI components and XML layouts in native Android development."
+    },
+    "tags": ["Android", "Java", "XML", "UI Design"],
+    "repo": "https://github.com/christofelkev/User_Interface",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Chrivins Android Projects Collection",
+      "en": "Chrivins Android Projects Collection"
+    },
+    "description": {
+      "id": "Kumpulan berbagai proyek mini, modul, dan utilitas Android native yang dikembangkan dengan Java.",
+      "en": "Curated collection of native Android mini-projects, modules, and utilities developed in Java."
+    },
+    "tags": ["Android", "Java", "Collection"],
+    "repo": "https://github.com/christofelkev/Chrivins-Android-Projects",
+    "images": []
   }
 ]

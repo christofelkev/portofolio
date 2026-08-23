@@ -11,13 +11,16 @@ const { projects: pt } = t;
     <div class="terminal-prompt">
       <span class="prompt-sign">$</span>
       <span class="prompt-path">~/portfolio</span>
-      <span class="prompt-cmd">ls -la projects/</span>
+      <span class="prompt-cmd" id="project-prompt-cmd">ls -la projects/</span>
     </div>
 
-    <p class="muted" style="font-family:var(--font-mono);font-size:12px;margin-top:-12px;margin-bottom:4px;"
+    <p class="muted" style="font-family:var(--font-mono);font-size:12px;margin-top:-12px;margin-bottom:8px;"
       data-i18n="projects.hint">
       {pt.hint}
     </p>
+
+    <!-- Dynamic Tech Tabs Filter Bar -->
+    <div id="project-tabs" class="project-tabs" role="tablist" aria-label="Filter by technology"></div>
 
     <div id="project-grid" class="project-grid" aria-live="polite"></div>
   </div>

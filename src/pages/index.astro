@@ -92,14 +92,105 @@ const projectsJson = JSON.stringify(projectsData);
         applyLang(current === 'id' ? 'en' : 'id');
       });
 
-      try { applyLang(stored); } catch(e) {}
+      try {
+        renderTabs();
+        applyLang(stored);
+      } catch(e) {}
+    }
+
+    var currentFilter = 'ALL';
+
+    function getUniqueTags(projects) {
+      var counts = {};
+      if (!projects || !Array.isArray(projects)) return counts;
+      projects.forEach(function(p) {
+        if (p.tags && Array.isArray(p.tags)) {
+          p.tags.forEach(function(tag) {
+            var t = tag.trim();
+            counts[t] = (counts[t] || 0) + 1;
+          });
+        }
+      });
+      return counts;
+    }
+
+    function renderTabs() {
+      var tabsContainer = document.getElementById('project-tabs');
+      if (!tabsContainer || !__PROJECTS__) return;
+
+      var counts = getUniqueTags(__PROJECTS__);
+      var sortedTags = Object.keys(counts).sort(function(a, b) {
+        return counts[b] - counts[a] || a.localeCompare(b);
+      });
+
+      var isAllActive = currentFilter.toUpperCase() === 'ALL';
+      var allTab = '<button class="project-tab' + (isAllActive ? ' active' : '') + '" data-tech="ALL" role="tab" aria-selected="' + isAllActive + '">' +
+        '<span>*.* All</span>' +
+        '<span class="tab-count">' + __PROJECTS__.length + '</span>' +
+        '</button>';
+
+      var tagTabs = sortedTags.map(function(tag) {
+        var isActive = currentFilter.toLowerCase() === tag.toLowerCase();
+        return '<button class="project-tab' + (isActive ? ' active' : '') + '" data-tech="' + tag + '" role="tab" aria-selected="' + isActive + '">' +
+          '<span>' + tag + '</span>' +
+          '<span class="tab-count">' + counts[tag] + '</span>' +
+          '</button>';
+      }).join('');
+
+      tabsContainer.innerHTML = allTab + tagTabs;
+
+      tabsContainer.querySelectorAll('.project-tab').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var tech = this.getAttribute('data-tech');
+          setFilter(tech);
+        });
+      });
+    }
+
+    function setFilter(tech) {
+      currentFilter = tech || 'ALL';
+      var promptCmd = document.getElementById('project-prompt-cmd');
+      if (promptCmd) {
+        if (currentFilter.toUpperCase() === 'ALL') {
+          promptCmd.textContent = 'ls -la projects/';
+        } else {
+          promptCmd.textContent = 'ls -la projects/ --grep="' + currentFilter.toLowerCase() + '"';
+        }
+      }
+
+      document.querySelectorAll('.project-tab').forEach(function(btn) {
+        var t = btn.getAttribute('data-tech');
+        var active = (t.toLowerCase() === currentFilter.toLowerCase());
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      var lang = localStorage.getItem('lang') || 'id';
+      renderProjects(lang);
     }
 
     function renderProjects(lang) {
       var grid = document.getElementById('project-grid');
       if (!grid) return;
       if (!__PROJECTS__ || !__PROJECTS__.length) return;
-      grid.innerHTML = __PROJECTS__.map(function(p, i) {
+
+      var filtered = __PROJECTS__.filter(function(p) {
+        if (currentFilter.toUpperCase() === 'ALL') return true;
+        if (!p.tags || !Array.isArray(p.tags)) return false;
+        return p.tags.some(function(t) {
+          return t.toLowerCase() === currentFilter.toLowerCase();
+        });
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="project-empty">' +
+          '<p class="line-num">// 404 NOT FOUND</p>' +
+          '<p style="margin:4px 0 0 0">No projects found matching filter: <span style="color:var(--brand);font-weight:600">"' + currentFilter + '"</span></p>' +
+          '</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(function(p, i) {
         var title = typeof p.title === 'object' ? (p.title[lang] || p.title.id) : p.title;
         var desc = typeof p.description === 'object' ? (p.description[lang] || p.description.id) : p.description;
         var images = p.images && p.images.length ? p.images : ['./assets/projects/placeholder.svg'];
@@ -114,9 +205,21 @@ const projectsJson = JSON.stringify(projectsData);
             '<span class="file-name">\uD83D\uDCC4 ' + title + '</span>' +
             '<p class="file-desc">' + desc + '</p>' +
           '</div>' +
-          '<div class="card-meta">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+          '<div class="card-meta">' + (p.tags || []).map(function(t) {
+            return '<span class="tag" data-filter-tag="' + t + '">' + t + '</span>';
+          }).join('') + '</div>' +
         '</a>';
       }).join('');
+
+      grid.querySelectorAll('.tag[data-filter-tag]').forEach(function(tagEl) {
+        tagEl.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var tag = this.getAttribute('data-filter-tag');
+          setFilter(tag);
+        });
+      });
+
       initCarousels();
     }
 

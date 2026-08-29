@@ -16,6 +16,8 @@ const techGroups = [
       { name: 'javascript', label: 'JavaScript', icon: '/assets/icons/javascript.svg' },
       { name: 'php', label: 'PHP', icon: '/assets/icons/php.svg' },
       { name: 'react', label: 'React', icon: '/assets/icons/react.svg' },
+      { name: 'svelte', label: 'Svelte', icon: '/assets/icons/svelte.svg' },
+      { name: 'bun', label: 'Bun', icon: '/assets/icons/bun.svg' },
     ],
   },
   {
@@ -46,10 +48,10 @@ const techGroups = [
     </div>
 
     <div class="tech-groups">
-      {techGroups.map((group) => (
+      {techGroups.map((group, idx) => (
         <div class="tech-group">
           <div class="tech-group-header">
-            <span class="line-num">01</span>
+            <span class="line-num">{String(idx + 1).padStart(2, '0')}</span>
             <span class="key">&quot;{groupLabels[group.key] || group.key}&quot;</span>
             <span class="colon">:</span>
             <span class="brace">[</span>

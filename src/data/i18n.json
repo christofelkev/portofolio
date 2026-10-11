@@ -1,96 +1,202 @@
 {
   "id": {
-    "siteTitle": "Christofel Kevin Manopo - Developer",
-    "brand": "CKM.",
+    "siteTitle": "Christofel Kevin Manopo · Portfolio",
+    "brandShort": "ckm",
+    "brandFull": "Christofel Kevin",
     "nav": {
-      "home": "home.tsx",
-      "projects": "projects.json",
-      "tech": "skills.md",
-      "contact": "contact.tsx",
-      "cv": "Download CV",
-      "themeTitle": "Toggle tema",
+      "about": "about",
+      "projects": "projects",
+      "experience": "experience",
+      "contact": "contact",
+      "resume": "Resume",
+      "themeTitle": "Ganti tema",
       "langLabel": "EN"
     },
     "hero": {
-      "prompt": "~/portfolio $ whoami",
       "name": "Christofel Kevin Manopo",
-      "roleLabel": "$ cat role.txt",
-      "roles": ["Web Developer", "Mobile Developer", "Tech Enthusiast", "Data Enthusiast"],
-      "ctaProjects": "Lihat Proyek →",
+      "handle": "@christofelkev",
+      "role": "Software Engineer · Android & Fullstack · DevOps & AI Automation",
+      "bio": "Software Engineer dengan fokus pada arsitektur backend dan pemrosesan data, membangun aplikasi multi-platform dari optimasi basis data hingga antarmuka pengguna.",
+      "ctaProjects": "Lihat Proyek",
       "ctaEmail": "Email",
-      "ctaGithub": "GitHub"
+      "ctaGithub": "GitHub",
+      "ctaResume": "Unduh CV"
     },
-    "tech": {
-      "prompt": "$ cat skills.json | jq",
-      "title": "Tech Stack",
-      "groups": {
-        "web": "Web",
-        "mobile": "Mobile",
-        "database": "Database"
-      }
+    "about": {
+      "sectionNum": "01",
+      "title": "about",
+      "p1": "Halo, saya Christofel Kevin. Seorang Software Engineer dengan ketertarikan mendalam pada arsitektur backend dan pemrosesan data, saat ini beroperasi sebagai Fullstack Developer dalam membangun aplikasi multi-platform yang menyeluruh.",
+      "p2": "Dengan fondasi solid dalam mengembangkan aplikasi web terukur menggunakan PHP, MySQL, JavaScript, serta teknologi modern seperti Tailwind dan Redis, fokus utama saya bertumpu pada pembangunan logika sistem yang kokoh. Peran saya mencakup seluruh spektrum teknologi: tidak hanya merancang dan mengimplementasikan RESTful API sebagai otak aplikasi, tetapi juga membangun antarmuka mobile lintas platform menggunakan Flutter dan native Android (Kotlin). Hal ini memberi saya perspektif end-to-end yang utuh — dari optimasi query database hingga ke layar pengguna.",
+      "p3": "Saya selalu bersemangat memperdalam pemahaman di bidang arsitektur sistem berskala besar, analisis data, serta mengeksplorasi cara-cara praktis untuk mengintegrasikan solusi AI ke dalam sistem siap produksi.",
+      "techTitle": "Keahlian & Teknologi"
     },
     "projects": {
-      "prompt": "$ ls -la projects/",
-      "title": "Proyek",
-      "hint": "Klik kartu untuk menuju repository GitHub."
+      "sectionNum": "02",
+      "title": "projects",
+      "statusLive": "live",
+      "statusRepo": "repo",
+      "hint": "Klik kartu untuk melihat detail repositori atau preview.",
+      "filterAll": "*.* All",
+      "filterEmpty": "Tidak ada proyek yang sesuai dengan filter:"
+    },
+    "experience": {
+      "sectionNum": "03",
+      "title": "experience",
+      "items": [
+        {
+          "company": "PT Asoka Indonesia",
+          "period": "Feb 2026 – Sekarang",
+          "role": "Web Programmer (Fullstack)",
+          "bullets": [
+            "Mengembangkan dan mengelola sistem web, mobile, dan backend yang aman menggunakan PHP, Redis, Flutter, dan Tailwind CSS dengan deployment server Linux.",
+            "Mendukung operasional internal perusahaan serta meningkatkan akses data, mobilitas, dan stabilitas aplikasi."
+          ]
+        },
+        {
+          "company": "PT Evolusi Kreasi Indonesia (Evolusi 3D)",
+          "period": "Sep 2025 – Des 2025",
+          "role": "IT Support",
+          "bullets": [
+            "Menyediakan dukungan infrastruktur IT untuk hardware, software, dan instalasi jaringan LAN.",
+            "Instalasi, pembaruan, dan penanganan troubleshooting sistem operasi dan aplikasi kerja.",
+            "Mendiagnosa serta menyelesaikan kendala teknis hardware dan software secara efisien.",
+            "Membantu proyek otomasi berbasis mikrokontroler Arduino dan pengkabelan sistem internal."
+          ]
+        },
+        {
+          "company": "Bangkit Academy led by Google, GoTo, & Traveloka",
+          "period": "2023",
+          "role": "Mobile Development Cohort — 2023",
+          "bullets": [
+            "Program pengembangan talenta digital oleh Google, GoTo, dan Traveloka; berfokus pada pengembangan aplikasi Android dengan Kotlin dan praktik rekayasa perangkat lunak profesional."
+          ]
+        },
+        {
+          "company": "Universitas Pamulang",
+          "period": "2021 – 2025",
+          "role": "S1 Teknik Informatika",
+          "bullets": [
+            "Sarjana Teknik Informatika dengan peminatan Rekayasa Perangkat Lunak, Pemrograman Web & Mobile, dan Basis Data.",
+            "Memperoleh Sertifikasi Profesi PEMROGRAM dari BNSP (Badan Nasional Sertifikasi Profesi).",
+            "Menyelesaikan pelatihan bahasa Inggris bisnis TBI Short Course [English for Business Communication]."
+          ]
+        }
+      ]
     },
     "contact": {
-      "prompt": "$ cat contact.md",
-      "title": "Kontak",
+      "sectionNum": "04",
+      "title": "contact",
+      "heading": "Mari terhubung & berkolaborasi.",
+      "subheading": "Punya ide proyek, tawaran kerja, peluang kolaborasi, atau sekadar ingin berdiskusi seputar teknologi? Silakan hubungi saya.",
       "email": "Kirim Email",
+      "copyEmail": "Salin Email",
+      "copied": "Tersalin!",
       "github": "GitHub",
-      "cv": "Download CV"
+      "cv": "Unduh CV"
     },
-    "statusBar": {
-      "branch": "main",
-      "langMode": "Bahasa Indonesia"
+    "footer": {
+      "copyright": "Christofel Kevin Manopo. All rights reserved.",
+      "inspired": "Inspired by simohypers"
     }
   },
   "en": {
-    "siteTitle": "Christofel Kevin Manopo - Developer",
-    "brand": "CKM.",
+    "siteTitle": "Christofel Kevin Manopo · Portfolio",
+    "brandShort": "ckm",
+    "brandFull": "Christofel Kevin",
     "nav": {
-      "home": "home.tsx",
-      "projects": "projects.json",
-      "tech": "skills.md",
-      "contact": "contact.tsx",
-      "cv": "Download CV",
+      "about": "about",
+      "projects": "projects",
+      "experience": "experience",
+      "contact": "contact",
+      "resume": "Resume",
       "themeTitle": "Toggle theme",
       "langLabel": "ID"
     },
     "hero": {
-      "prompt": "~/portfolio $ whoami",
       "name": "Christofel Kevin Manopo",
-      "roleLabel": "$ cat role.txt",
-      "roles": ["Web Developer", "Mobile Developer", "Tech Enthusiast", "Data Enthusiast"],
-      "ctaProjects": "View Projects →",
+      "handle": "@christofelkev",
+      "role": "Software Engineer · Android & Fullstack · DevOps & AI Automation",
+      "bio": "Software Engineer focused on backend architecture and data processing, building comprehensive multi-platform applications from database optimization to the user's screen.",
+      "ctaProjects": "View Projects",
       "ctaEmail": "Email",
-      "ctaGithub": "GitHub"
+      "ctaGithub": "GitHub",
+      "ctaResume": "Resume"
     },
-    "tech": {
-      "prompt": "$ cat skills.json | jq",
-      "title": "Tech Stack",
-      "groups": {
-        "web": "Web",
-        "mobile": "Mobile",
-        "database": "Database"
-      }
+    "about": {
+      "sectionNum": "01",
+      "title": "about",
+      "p1": "Hi, I’m Christofel Kevin. A Software Engineer with a deep passion for Backend architecture and data processing, currently operating as a Fullstack Developer to build comprehensive multi-platform applications.",
+      "p2": "With a solid foundation in developing scalable web applications using PHP, MySQL, JavaScript, and modern tools like Tailwind and Redis, I focus on building robust system logic. My role extends across the entire technology stack: architecting and implementing RESTful APIs to serve as the application's brain, while developing cross-platform mobile experiences with Flutter and Android (Kotlin). This gives me a unique end-to-end perspective on application development — from database optimization all the way to the user's screen.",
+      "p3": "I am always seeking to deepen my knowledge in system architecture, data analysis, and pragmatic ways to integrate AI solutions into production-ready systems.",
+      "techTitle": "Skills & Technologies"
     },
     "projects": {
-      "prompt": "$ ls -la projects/",
-      "title": "Projects",
-      "hint": "Click a card to open the GitHub repository."
+      "sectionNum": "02",
+      "title": "projects",
+      "statusLive": "live",
+      "statusRepo": "repo",
+      "hint": "Click cards to inspect repository or live demonstration.",
+      "filterAll": "*.* All",
+      "filterEmpty": "No projects found matching filter:"
+    },
+    "experience": {
+      "sectionNum": "03",
+      "title": "experience",
+      "items": [
+        {
+          "company": "PT Asoka Indonesia",
+          "period": "Feb 2026 – Present",
+          "role": "Web Programmer (Fullstack)",
+          "bullets": [
+            "Developed and maintained secure web, mobile, and backend systems using PHP, Redis, Flutter, and Tailwind CSS with Linux server deployment.",
+            "Supported internal company operations and improved data access, mobility, and application stability."
+          ]
+        },
+        {
+          "company": "PT Evolusi Kreasi Indonesia (Evolusi 3D)",
+          "period": "Sep 2025 – Dec 2025",
+          "role": "IT Support",
+          "bullets": [
+            "Provided IT infrastructure support for hardware, software, and LAN networks.",
+            "Installed, updated, and troubleshot operating systems and applications.",
+            "Diagnosed and resolved hardware and software issues efficiently.",
+            "Assisted Arduino-based automation and wiring projects for internal systems."
+          ]
+        },
+        {
+          "company": "Bangkit Academy led by Google, GoTo, & Traveloka",
+          "period": "2023",
+          "role": "Mobile Development Cohort — 2023",
+          "bullets": [
+            "A digital talent development program by Google, GoTo, and Traveloka; focused on Android application development with Kotlin and professional software engineering practices."
+          ]
+        },
+        {
+          "company": "Pamulang University",
+          "period": "2021 – 2025",
+          "role": "Bachelor of Informatics Engineering",
+          "bullets": [
+            "Graduated in Informatics Engineering with strong focus on Software Engineering, Web & Mobile Development, and Database Systems.",
+            "Certified by BNSP (Badan Nasional Sertifikasi Profesi) in Software Programming (PEMROGRAM).",
+            "Completed TBI Short Course in English for Business Communication."
+          ]
+        }
+      ]
     },
     "contact": {
-      "prompt": "$ cat contact.md",
-      "title": "Contact",
+      "sectionNum": "04",
+      "title": "contact",
+      "heading": "Let's build something together.",
+      "subheading": "Have a project in mind, an opportunity, or just want to chat about software engineering? Feel free to reach out anytime.",
       "email": "Send Email",
+      "copyEmail": "Copy Address",
+      "copied": "Copied!",
       "github": "GitHub",
       "cv": "Download CV"
     },
-    "statusBar": {
-      "branch": "main",
-      "langMode": "English"
+    "footer": {
+      "copyright": "Christofel Kevin Manopo. All rights reserved.",
+      "inspired": "Inspired by simohypers"
     }
   }
 }

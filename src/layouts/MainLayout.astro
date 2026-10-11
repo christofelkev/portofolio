@@ -7,9 +7,30 @@ import '../styles/global.css';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Christofel Kevin Manopo - Developer</title>
-    <meta name="description" content="Portfolio web dengan tema terminal VSCode." />
+    <title>Christofel Kevin Manopo · Portfolio</title>
+    <meta name="description" content="Christofel Kevin Manopo (@christofelkev) - Full-Stack & Mobile Developer. Projects, tools, and things I build." />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script is:inline>
+      (function() {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'dark'); // Default to dark like simohypers
+        if (theme === 'light') {
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+        }
+      })();
+    </script>
   </head>
   <body>
     <slot />

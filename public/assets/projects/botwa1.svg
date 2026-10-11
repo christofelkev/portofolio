@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="wa-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b141a"/>
+      <stop offset="100%" stop-color="#070a0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#wa-bg)"/>
+  <!-- Phone Frame / App Mockup -->
+  <rect x="80" y="30" width="640" height="440" rx="16" fill="#111b21" stroke="#222e35" stroke-width="1"/>
+  <!-- Header -->
+  <rect x="80" y="30" width="640" height="60" rx="16" fill="#202c33"/>
+  <circle cx="120" cy="60" r="18" fill="#00a884"/>
+  <text x="120" y="66" fill="#ffffff" font-family="sans-serif" font-size="16" text-anchor="middle" font-weight="bold">🤖</text>
+  <text x="155" y="55" fill="#e9edef" font-family="sans-serif" font-size="15" font-weight="600">Bot Toko Servis (Automated Assistant)</text>
+  <text x="155" y="73" fill="#00a884" font-family="sans-serif" font-size="12">online · Baileys &amp; Node.js engine</text>
+  <!-- Chat bubbles -->
+  <!-- User Msg -->
+  <rect x="420" y="115" width="270" height="52" rx="10" fill="#005c4b"/>
+  <text x="435" y="137" fill="#e9edef" font-family="sans-serif" font-size="13">Halo min, mau cek status servis laptop</text>
+  <text x="435" y="153" fill="#e9edef" font-family="sans-serif" font-size="13">nomor invoice: #SRV-9021</text>
+  <text x="675" y="160" fill="#8696a0" font-family="sans-serif" font-size="10" text-anchor="end">14:20 ✓✓</text>
+  <!-- Bot Msg -->
+  <rect x="110" y="185" width="370" height="150" rx="10" fill="#202c33"/>
+  <text x="125" y="210" fill="#25d366" font-family="sans-serif" font-size="13" font-weight="bold">Halo Kak! Berikut detail status pesanan:</text>
+  <text x="125" y="235" fill="#e9edef" font-family="sans-serif" font-size="13">📦 Perangkat: ASUS ROG Zephyrus G14</text>
+  <text x="125" y="257" fill="#e9edef" font-family="sans-serif" font-size="13">🔧 Pekerjaan: Pembersihan Fan &amp; Repaste</text>
+  <text x="125" y="279" fill="#e9edef" font-family="sans-serif" font-size="13">⚡ Status: [SELESAI - SIAP DIAMBIL]</text>
+  <text x="125" y="301" fill="#e9edef" font-family="sans-serif" font-size="13">💰 Total Biaya: Rp 150.000</text>
+  <text x="465" y="325" fill="#8696a0" font-family="sans-serif" font-size="10" text-anchor="end">14:20</text>
+  <!-- Bot Interactive Buttons -->
+  <rect x="110" y="350" width="180" height="38" rx="8" fill="#111b21" stroke="#222e35"/>
+  <text x="200" y="374" fill="#00a884" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="600">📍 Lokasi Toko</text>
+  <rect x="300" y="350" width="180" height="38" rx="8" fill="#111b21" stroke="#222e35"/>
+  <text x="390" y="374" fill="#00a884" font-family="sans-serif" font-size="12" text-anchor="middle" font-weight="600">💬 Bicara dg CS</text>
+  <!-- Bottom bar -->
+  <rect x="80" y="420" width="640" height="50" fill="#202c33"/>
+  <rect x="100" y="430" width="540" height="30" rx="8" fill="#2a3942"/>
+  <text x="120" y="450" fill="#8696a0" font-family="sans-serif" font-size="12">Ketik pesan...</text>
+</svg>

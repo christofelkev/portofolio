@@ -10,7 +10,10 @@
     },
     "tags": ["TypeScript", "Node.js", "AI", "Automation", "Developer Tools"],
     "repo": "https://github.com/christofelkev/sagasu",
-    "images": []
+    "images": [
+      "./assets/projects/sagasu1.png",
+      "./assets/projects/sagasu2.png"
+    ]
   },
   {
     "title": {
@@ -23,7 +26,9 @@
     },
     "tags": ["Svelte", "Bun", "ElysiaJS", "Drizzle ORM", "TypeScript"],
     "repo": "https://github.com/christofelkev/wuwa",
-    "images": []
+    "images": [
+      "./assets/projects/wuwa1.png"
+    ]
   },
   {
     "title": {
@@ -36,7 +41,9 @@
     },
     "tags": ["SvelteKit", "Bun", "Tailwind CSS", "TypeScript"],
     "repo": "https://github.com/christofelkev/sahabat",
-    "images": []
+    "images": [
+      "./assets/projects/sahabat1.jpg"
+    ]
   },
   {
     "title": {
@@ -49,7 +56,9 @@
     },
     "tags": ["Tauri 2", "React", "TypeScript", "SQLite", "Zustand"],
     "repo": "https://github.com/christofelkev/bible-point",
-    "images": []
+    "images": [
+      "./assets/projects/biblepoint.svg"
+    ]
   },
   {
     "title": {
@@ -96,7 +105,9 @@
     },
     "tags": ["Android Studio", "Kotlin", "Retrofit", "MVVM", "LiveData", "ViewModel"],
     "repo": "https://github.com/christofelkev/RECIDER",
-    "images": ["./assets/projects/recider1.png"]
+    "images": [
+      "./assets/projects/recider1.png"
+    ]
   },
   {
     "title": {
@@ -109,7 +120,9 @@
     },
     "tags": ["Rust", "TypeScript", "Backend", "Ticketing"],
     "repo": "https://github.com/christofelkev/ticketing_app_rust",
-    "images": []
+    "images": [
+      "./assets/projects/ticketing1.png"
+    ]
   },
   {
     "title": {
@@ -122,7 +135,9 @@
     },
     "tags": ["React", "Node.js", "Express", "FFmpeg"],
     "repo": "https://github.com/christofelkev/video-to-gif-ffmpeg",
-    "images": ["./assets/projects/video-to-gif1.png"]
+    "images": [
+      "./assets/projects/video-to-gif1.png"
+    ]
   },
   {
     "title": {
@@ -135,7 +150,9 @@
     },
     "tags": ["Laravel", "PHP", "MySQL", "Bootstrap", "Helpdesk"],
     "repo": "https://github.com/christofelkev/helpdesk-app-laravel",
-    "images": ["./assets/projects/gif-1.svg"]
+    "images": [
+      "./assets/projects/helpdesk1.svg"
+    ]
   },
   {
     "title": {
@@ -148,7 +165,9 @@
     },
     "tags": ["JavaScript", "Node.js", "Baileys", "WhatsApp", "AppScript"],
     "repo": "https://github.com/christofelkev/bot-wa-toko-servis",
-    "images": ["./assets/projects/gif-1.svg"]
+    "images": [
+      "./assets/projects/botwa1.svg"
+    ]
   },
   {
     "title": {
@@ -161,7 +180,9 @@
     },
     "tags": ["TypeScript", "React", "AI", "Developer Tools"],
     "repo": "https://github.com/christofelkev/SnippetAI",
-    "images": []
+    "images": [
+      "./assets/projects/snippetai1.png"
+    ]
   },
   {
     "title": {
@@ -174,7 +195,9 @@
     },
     "tags": ["JavaScript", "Node.js", "React"],
     "repo": "https://github.com/christofelkev/podomoro-js",
-    "images": ["./assets/projects/podomoro1.png"]
+    "images": [
+      "./assets/projects/podomoro1.png"
+    ]
   },
   {
     "title": {
@@ -187,7 +210,9 @@
     },
     "tags": ["Android", "Kotlin", "Jetpack Compose", "Dicoding"],
     "repo": "https://github.com/christofelkev/HSRComposeApp",
-    "images": []
+    "images": [
+      "./assets/projects/hsr1.png"
+    ]
   },
   {
     "title": {
@@ -200,6 +225,8 @@
     },
     "tags": ["JavaScript", "Node.js", "ZKTeco", "Data Visualization"],
     "repo": "https://github.com/christofelkev/zkteco-fingerprint-visualizer",
-    "images": []
+    "images": [
+      "./assets/projects/zkteco1.svg"
+    ]
   }
 ]

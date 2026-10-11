@@ -19,7 +19,7 @@ const { projects: pt } = t;
       {projectsData.map((project) => {
         const title = project.title[lang] || project.title.id;
         const desc = project.description[lang] || project.description.id;
-        const hasImg = project.images && project.images.length > 0 && !project.images[0].includes('gif-1.svg');
+        const hasImg = project.images && project.images.length > 0;
         const imgSrc = hasImg ? project.images[0] : null;
         const isLive = project.tags.includes('AI') || project.tags.includes('Web App') || project.tags.includes('React');
 

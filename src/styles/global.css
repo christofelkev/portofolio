@@ -922,14 +922,9 @@ html.light .preview-backdrop {
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: center;
+  text-align: center;
   font-family: var(--font-mono);
   font-size: 0.775rem;
   color: var(--text-dim);
-}
-
-.footer-inner a:hover {
-  color: var(--primary);
 }

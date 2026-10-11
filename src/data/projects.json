@@ -1,16 +1,55 @@
 [
   {
     "title": {
-      "id": "Aplikasi Helpdesk Berbasis Web",
-      "en": "Web-Based Helpdesk Application"
+      "id": "SAGASU - AI Job Discovery",
+      "en": "SAGASU - AI Job Discovery"
     },
     "description": {
-      "id": "Aplikasi helpdesk berbasis Laravel untuk manajemen tiket keluhan pelanggan. Mendukung autentikasi user, pembuatan dan pelacakan tiket, perubahan status tiket, serta dashboard admin untuk monitoring dan penanganan laporan.",
-      "en": "Laravel-based helpdesk application for customer ticket management. Features user authentication, ticket creation and tracking, ticket status updates, and an admin dashboard for monitoring and handling reports."
+      "id": "Platform otomatisasi pencarian dan pencocokan lowongan kerja bertenaga AI. Mengotomatisasi penelusuran, ekstraksi data loker, dan penilaian kualifikasi tanpa proses pencarian manual yang repetitif.",
+      "en": "AI-powered personal job discovery tool designed to automate finding, scraping, filtering, and matching job listings across platforms without manual repetitive searching."
     },
-    "tags": ["Laravel", "PHP", "MySQL", "Bootstrap", "Helpdesk"],
-    "repo": "https://github.com/christofelkev/helpdesk-app-laravel",
-    "images": ["./assets/projects/gif-1.svg"]
+    "tags": ["TypeScript", "Node.js", "AI", "Automation", "Developer Tools"],
+    "repo": "https://github.com/christofelkev/sagasu",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Solaris-3 Resonance Terminal (WuWa)",
+      "en": "Solaris-3 Resonance Terminal (WuWa)"
+    },
+    "description": {
+      "id": "Platform teori & basis data performa tinggi untuk Wuthering Waves. Dibangun fullstack dengan Svelte, ElysiaJS, Drizzle ORM, dan runtime Bun untuk kalkulasi resonansi dan panduan karakter yang cepat.",
+      "en": "High-performance unified fullstack theorycrafting platform and database for Wuthering Waves. Built with Svelte, ElysiaJS, Drizzle ORM, and Bun runtime for fast calculations."
+    },
+    "tags": ["Svelte", "Bun", "ElysiaJS", "Drizzle ORM", "TypeScript"],
+    "repo": "https://github.com/christofelkev/wuwa",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "PT Sahabat Indonesia Inti Mandiri",
+      "en": "PT Sahabat Indonesia Inti Mandiri"
+    },
+    "description": {
+      "id": "Platform profil perusahaan dan katalog distributor komponen industri & elektrikal modern. Dibangun menggunakan SvelteKit, Bun, dan Tailwind CSS dengan animasi antarmuka dan interaktivitas yang mulus.",
+      "en": "Modern company profile & industrial electrical component distributor catalog. Built using SvelteKit, Bun, and Tailwind CSS with interactive motion UI and product categories."
+    },
+    "tags": ["SvelteKit", "Bun", "Tailwind CSS", "TypeScript"],
+    "repo": "https://github.com/christofelkev/sahabat",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "Bible Point (Dual-Screen Scripture)",
+      "en": "Bible Point (Dual-Screen Scripture)"
+    },
+    "description": {
+      "id": "Aplikasi desktop Windows untuk memproyeksikan ayat Alkitab ke layar kedua / proyektor ibadah secara offline tanpa repot membuat slide. Dibangun dengan Tauri 2, React, TypeScript, dan SQLite.",
+      "en": "Windows desktop app built with Tauri 2, React, and SQLite to project scripture verses onto a second screen during church services offline with zero slide preparation."
+    },
+    "tags": ["Tauri 2", "React", "TypeScript", "SQLite", "Zustand"],
+    "repo": "https://github.com/christofelkev/bible-point",
+    "images": []
   },
   {
     "title": {
@@ -31,6 +70,23 @@
   },
   {
     "title": {
+      "id": "Sistem Faktur Penjualan",
+      "en": "Sales Invoice System"
+    },
+    "description": {
+      "id": "Aplikasi berbasis web untuk mengelola perusahaan, customer, produk, penjualan, dan faktur. Dibangun menggunakan CodeIgniter 4 dengan fitur CRUD dan export PDF.",
+      "en": "A web-based application to manage companies, customers, products, sales, and invoices. Built using CodeIgniter 4 with CRUD features and PDF export."
+    },
+    "tags": ["JavaScript", "PHP", "CodeIgniter 4", "MySQL"],
+    "repo": "https://github.com/christofelkev/ujikom_faktur",
+    "images": [
+      "./assets/projects/faktur1.png",
+      "./assets/projects/faktur2.png",
+      "./assets/projects/faktur3.png"
+    ]
+  },
+  {
+    "title": {
       "id": "RECIDER (Recipe Indonesia Finder)",
       "en": "RECIDER (Recipe Indonesia Finder)"
     },
@@ -41,45 +97,6 @@
     "tags": ["Android Studio", "Kotlin", "Retrofit", "MVVM", "LiveData", "ViewModel"],
     "repo": "https://github.com/christofelkev/RECIDER",
     "images": ["./assets/projects/recider1.png"]
-  },
-  {
-    "title": {
-      "id": "SnippetAI",
-      "en": "SnippetAI"
-    },
-    "description": {
-      "id": "Platform manajemen dan pembuatan snippet kode berbasis AI untuk membantu developer mengorganisir dan menghasilkan potongan kode dengan cepat.",
-      "en": "AI-powered code snippet generation and management tool designed to help developers organize and generate code snippets quickly."
-    },
-    "tags": ["TypeScript", "React", "AI", "Developer Tools"],
-    "repo": "https://github.com/christofelkev/SnippetAI",
-    "images": []
-  },
-  {
-    "title": {
-      "id": "Bible Point",
-      "en": "Bible Point"
-    },
-    "description": {
-      "id": "Aplikasi web interaktif untuk membaca, mencari ayat, dan mencatat poin-poin renungan Alkitab secara terstruktur.",
-      "en": "Interactive web application for reading, searching verses, and keeping structured devotional Bible study notes."
-    },
-    "tags": ["TypeScript", "React", "Web App"],
-    "repo": "https://github.com/christofelkev/bible-point",
-    "images": []
-  },
-  {
-    "title": {
-      "id": "ZKTeco Fingerprint Visualizer",
-      "en": "ZKTeco Fingerprint Visualizer"
-    },
-    "description": {
-      "id": "Aplikasi untuk memvisualisasikan dan memproses log data kehadiran dari mesin fingerprint ZKTeco ke tampilan antarmuka yang mudah dipahami.",
-      "en": "Application for visualizing and processing attendance log data from ZKTeco fingerprint devices into an intuitive user interface."
-    },
-    "tags": ["JavaScript", "Node.js", "ZKTeco", "Data Visualization"],
-    "repo": "https://github.com/christofelkev/zkteco-fingerprint-visualizer",
-    "images": []
   },
   {
     "title": {
@@ -109,6 +126,19 @@
   },
   {
     "title": {
+      "id": "Aplikasi Helpdesk Berbasis Web",
+      "en": "Web-Based Helpdesk Application"
+    },
+    "description": {
+      "id": "Aplikasi helpdesk berbasis Laravel untuk manajemen tiket keluhan pelanggan. Mendukung autentikasi user, pembuatan dan pelacakan tiket, perubahan status tiket, serta dashboard admin untuk monitoring dan penanganan laporan.",
+      "en": "Laravel-based helpdesk application for customer ticket management. Features user authentication, ticket creation and tracking, ticket status updates, and an admin dashboard for monitoring and handling reports."
+    },
+    "tags": ["Laravel", "PHP", "MySQL", "Bootstrap", "Helpdesk"],
+    "repo": "https://github.com/christofelkev/helpdesk-app-laravel",
+    "images": ["./assets/projects/gif-1.svg"]
+  },
+  {
+    "title": {
       "id": "WhatsApp Bot / Bot WA Toko Servis",
       "en": "WhatsApp Bot, Service Shop Assistant"
     },
@@ -119,6 +149,19 @@
     "tags": ["JavaScript", "Node.js", "Baileys", "WhatsApp", "AppScript"],
     "repo": "https://github.com/christofelkev/bot-wa-toko-servis",
     "images": ["./assets/projects/gif-1.svg"]
+  },
+  {
+    "title": {
+      "id": "SnippetAI",
+      "en": "SnippetAI"
+    },
+    "description": {
+      "id": "Platform manajemen dan pembuatan snippet kode berbasis AI untuk membantu developer mengorganisir dan menghasilkan potongan kode dengan cepat.",
+      "en": "AI-powered code snippet generation and management tool designed to help developers organize and generate code snippets quickly."
+    },
+    "tags": ["TypeScript", "React", "AI", "Developer Tools"],
+    "repo": "https://github.com/christofelkev/SnippetAI",
+    "images": []
   },
   {
     "title": {
@@ -135,23 +178,6 @@
   },
   {
     "title": {
-      "id": "Sistem Faktur Penjualan",
-      "en": "Sales Invoice System"
-    },
-    "description": {
-      "id": "Aplikasi berbasis web untuk mengelola perusahaan, customer, produk, penjualan, dan faktur. Dibangun menggunakan CodeIgniter 4 dengan fitur CRUD dan export PDF.",
-      "en": "A web-based application to manage companies, customers, products, sales, and invoices. Built using CodeIgniter 4 with CRUD features and PDF export."
-    },
-    "tags": ["JavaScript", "PHP", "CodeIgniter 4", "MySQL"],
-    "repo": "https://github.com/christofelkev/ujikom_faktur",
-    "images": [
-      "./assets/projects/faktur1.png",
-      "./assets/projects/faktur2.png",
-      "./assets/projects/faktur3.png"
-    ]
-  },
-  {
-    "title": {
       "id": "HSR Compose App",
       "en": "HSR Compose App"
     },
@@ -161,6 +187,19 @@
     },
     "tags": ["Android", "Kotlin", "Jetpack Compose", "Dicoding"],
     "repo": "https://github.com/christofelkev/HSRComposeApp",
+    "images": []
+  },
+  {
+    "title": {
+      "id": "ZKTeco Fingerprint Visualizer",
+      "en": "ZKTeco Fingerprint Visualizer"
+    },
+    "description": {
+      "id": "Aplikasi untuk memvisualisasikan dan memproses log data kehadiran dari mesin fingerprint ZKTeco ke tampilan antarmuka yang mudah dipahami.",
+      "en": "Application for visualizing and processing attendance log data from ZKTeco fingerprint devices into an intuitive user interface."
+    },
+    "tags": ["JavaScript", "Node.js", "ZKTeco", "Data Visualization"],
+    "repo": "https://github.com/christofelkev/zkteco-fingerprint-visualizer",
     "images": []
   }
 ]

@@ -1,0 +1,23 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+const { footer } = t;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span>
+        &copy; {year} <span data-i18n="footer.copyright">{footer.copyright}</span>
+      </span>
+      <span class="inspired-text">
+        <a href="https://simohypers.work" target="_blank" rel="noopener noreferrer" data-i18n="footer.inspired">
+          {footer.inspired}
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>

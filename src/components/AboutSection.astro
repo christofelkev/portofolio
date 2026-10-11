@@ -1,0 +1,55 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+const { about } = t;
+
+const techSkills = [
+  { name: 'PHP', icon: '/assets/icons/php.svg' },
+  { name: 'MySQL', icon: '/assets/icons/mysql.svg' },
+  { name: 'Redis', icon: '/assets/icons/redis.svg' },
+  { name: 'Bun', icon: '/assets/icons/bun.svg' },
+  { name: 'Svelte', icon: '/assets/icons/svelte.svg' },
+  { name: 'JavaScript', icon: '/assets/icons/javascript.svg' },
+  { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
+  { name: 'React', icon: '/assets/icons/react.svg' },
+  { name: 'Flutter', icon: '/assets/icons/flutter.svg' },
+  { name: 'Kotlin', icon: '/assets/icons/kotlin.svg' },
+  { name: 'Tailwind CSS', icon: '/assets/icons/tailwindcss.svg' },
+  { name: 'Rust', icon: '/assets/icons/rust.svg' },
+  { name: 'Git', icon: '/assets/icons/git.svg' },
+];
+---
+
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-heading">
+      <span class="section-num" data-i18n="about.sectionNum">{about.sectionNum}</span>
+      <span class="section-sep">·</span>
+      <span class="section-title" data-i18n="about.title">{about.title}</span>
+    </h2>
+
+    <p class="about-text" data-i18n="about.p1">
+      {about.p1}
+    </p>
+
+    <p class="about-text" data-i18n="about.p2">
+      {about.p2}
+    </p>
+
+    <p class="about-text" data-i18n="about.p3">
+      {about.p3}
+    </p>
+
+    <!-- Skills / Tech Stack Chips -->
+    <div class="skills-wrap" role="list" aria-label="Technologies and skills">
+      {techSkills.map((skill) => (
+        <span class="skill-chip" role="listitem">
+          <img src={skill.icon} alt={`${skill.name} icon`} loading="lazy" />
+          <span>{skill.name}</span>
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

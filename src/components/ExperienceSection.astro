@@ -1,0 +1,42 @@
+---
+import i18nData from '../data/i18n.json';
+
+const lang = 'id';
+const t = i18nData[lang];
+const { experience } = t;
+---
+
+<section class="section" id="experience">
+  <div class="container">
+    <h2 class="section-heading">
+      <span class="section-num" data-i18n="experience.sectionNum">{experience.sectionNum}</span>
+      <span class="section-sep">·</span>
+      <span class="section-title" data-i18n="experience.title">{experience.title}</span>
+    </h2>
+
+    <div class="experience-list" id="experience-container">
+      {experience.items.map((item, index) => (
+        <article class="experience-item" data-exp-index={index}>
+          <div class="exp-header">
+            <h3 class="exp-company" data-i18n={`experience.items.${index}.company`}>
+              {item.company}
+            </h3>
+            <span class="exp-period" data-i18n={`experience.items.${index}.period`}>
+              {item.period}
+            </span>
+          </div>
+          <p class="exp-role" data-i18n={`experience.items.${index}.role`}>
+            {item.role}
+          </p>
+          <ul class="exp-bullets">
+            {item.bullets.map((bullet, bIdx) => (
+              <li data-i18n={`experience.items.${index}.bullets.${bIdx}`}>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

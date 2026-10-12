@@ -707,12 +707,8 @@ html.light .preview-backdrop {
 .card-desc {
   font-size: 0.875rem;
   color: var(--text-muted);
-  line-height: 1.55;
-  margin: 0.4rem 0 0.85rem 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-height: 1.6;
+  margin: 0.45rem 0 0.95rem 0;
 }
 
 /* Card Footer (Tags + Links) */
